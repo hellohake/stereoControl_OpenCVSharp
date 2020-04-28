@@ -25,11 +25,64 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using OpenCvSharp;          //添加命令空间
+
 namespace stereoControl
 {
     //共享数据
     class ShareData
     {
+        //定义私有变量
+        private static Mat comImg = new Mat();
+        private static Mat leftImg = new Mat();
+        private static Mat rightImg = new Mat();
 
+        private static string logString = null;
+
+        //封装属性
+        public static Mat ComImg
+        {
+            set
+            {
+                comImg = value;
+            }
+            get
+            {
+                return comImg;
+            }
+        }
+        public static Mat LeftImg
+        {
+            set
+            {
+                leftImg = value;
+            }
+            get
+            {
+                return leftImg;
+            }
+        }
+        public static Mat RightImg
+        {
+            set
+            {
+                rightImg = value;
+            }
+            get
+            {
+                return rightImg;
+            }
+        }
+        public static string Log
+        {
+            set
+            {
+                logString = value;
+            }
+            get
+            {
+                return logString;
+            }
+        }
     }
 }

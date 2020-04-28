@@ -28,6 +28,8 @@ namespace stereoControl
         //标志位
         private bool DOUBLECAM_OPEN = false;
         private bool DOUBLECAM_PAUSE = false;
+        //窗体
+        private LogView logWin;
 
         public Form1()
         {
@@ -76,11 +78,15 @@ namespace stereoControl
             }
             else
             {
-                //清空图像显示
+                //关闭摄像机
                 if(!DOUBLECAM_PAUSE)
                 {
                     this.pictureBoxIpl_left.ImageIpl = null;
                     this.pictureBoxIpl_right.ImageIpl = null;
+                    //摄像头关闭后清理缓存图片
+                    this.comImg = new Mat();
+                    this.leftImg = new Mat();
+                    this.rightImg = new Mat();
                 }                
             }
         }
@@ -89,6 +95,7 @@ namespace stereoControl
         {
             if(!DOUBLECAM_OPEN)
             {
+                ShareData.Log = "[msg] 摄像头已打开";
                 DOUBLECAM_OPEN = true;
             }
             else
@@ -100,6 +107,7 @@ namespace stereoControl
         {
             if(DOUBLECAM_OPEN)
             {
+                ShareData.Log = "[msg] 摄像头已关闭";
                 DOUBLECAM_OPEN = false;
                 DOUBLECAM_PAUSE = false;
             }
@@ -113,6 +121,7 @@ namespace stereoControl
         {
             if(DOUBLECAM_OPEN)
             {
+                ShareData.Log = "[msg] 摄像头已暂停";
                 DOUBLECAM_OPEN = false;
                 DOUBLECAM_PAUSE = true;
             }
@@ -128,9 +137,66 @@ namespace stereoControl
             }
             else
             {
+                ShareData.Log = "[msg] 摄像头已重启";
                 DOUBLECAM_OPEN = true;
                 DOUBLECAM_PAUSE = false;
             }
+        }
+        //捕获当前图片（实现拍照功能）
+        private void ucBtn_capture_BtnClick(object sender, EventArgs e)
+        {
+            //当相机关闭时
+            if(!DOUBLECAM_PAUSE && !DOUBLECAM_OPEN)
+            {
+                if(FrmDialog.ShowDialog(this,"必须打开摄像头才能拍照","Warning")== DialogResult.OK)
+                {
+                    return;
+                }
+            }
+            //临时暂存图像
+            Mat leftImg_temp = leftImg.Clone();
+            Mat rightImg_temp = rightImg.Clone();
+            //设置saveFileDialog            
+            this.saveFileDialog_pic.Filter = "jpg file|*.jpg|bmp file|*.bmp";
+            this.saveFileDialog_pic.FilterIndex = 1;
+            this.saveFileDialog_pic.RestoreDirectory = true;
+            //如果按下确认选择的按钮
+            if(this.saveFileDialog_pic.ShowDialog() == DialogResult.OK)
+            {
+                //设置保存文件名
+                string fileName = this.saveFileDialog_pic.FileName;
+                string[] splitName = fileName.Split('.');
+                string leftPicfileName = splitName[0] + "_left." + splitName[1]; 
+                string rightPicfileName = splitName[0] + "_right." + splitName[1];
+                //写入图片
+                Cv2.ImWrite(leftPicfileName, leftImg_temp);
+                Cv2.ImWrite(rightPicfileName, rightImg_temp);
+                ShareData.Log = "[msg] 图片保存成功";
+            }
+        }
+        //打开LogView窗口
+        private void lOGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            logWin = GenericSingleton<LogView>.CreateInstance();
+            logWin.Show();
+            ShareData.Log = "[msg] LogView已打开";
+        }
+        //主窗体是否置顶
+        private void ucCheckBox_top_CheckedChangeEvent(object sender, EventArgs e)
+        {
+            if(this.ucCheckBox_top.Checked)
+            {
+                this.TopMost = true;
+            }
+            else
+            {
+                this.TopMost = false;
+            }
+        }
+        //读入相机标定数据
+        private void ucBtnExt_readCamParm_BtnClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

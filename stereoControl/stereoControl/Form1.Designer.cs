@@ -33,7 +33,7 @@
             this.pictureBoxIpl_left = new OpenCvSharp.UserInterface.PictureBoxIpl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBoxIpl_right = new OpenCvSharp.UserInterface.PictureBoxIpl();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip_fun = new System.Windows.Forms.MenuStrip();
             this.图像处理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.立体测量ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBB机器人运动控制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,11 +47,17 @@
             this.ucBtn_pause = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtn_close = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtn_open = new HZH_Controls.Controls.UCBtnExt();
+            this.saveFileDialog_pic = new System.Windows.Forms.SaveFileDialog();
+            this.ucCheckBox_top = new HZH_Controls.Controls.UCCheckBox();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ucBtnExt_readCamParm = new HZH_Controls.Controls.UCBtnExt();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ucSwitch1 = new HZH_Controls.Controls.UCSwitch();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIpl_left)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIpl_right)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip_fun.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,20 +105,21 @@
             this.pictureBoxIpl_right.TabIndex = 2;
             this.pictureBoxIpl_right.TabStop = false;
             // 
-            // menuStrip1
+            // menuStrip_fun
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip_fun.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip_fun.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.图像处理ToolStripMenuItem,
             this.立体测量ToolStripMenuItem,
             this.aBB机器人运动控制ToolStripMenuItem,
             this.extensionToolStripMenuItem,
-            this.lOGToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1346, 28);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
+            this.lOGToolStripMenuItem,
+            this.settingsToolStripMenuItem});
+            this.menuStrip_fun.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip_fun.Name = "menuStrip_fun";
+            this.menuStrip_fun.Size = new System.Drawing.Size(1346, 28);
+            this.menuStrip_fun.TabIndex = 4;
+            this.menuStrip_fun.Text = "menuStrip1";
             // 
             // 图像处理ToolStripMenuItem
             // 
@@ -144,10 +151,12 @@
             // 
             // lOGToolStripMenuItem
             // 
+            this.lOGToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lOGToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Desktop;
             this.lOGToolStripMenuItem.Name = "lOGToolStripMenuItem";
             this.lOGToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
             this.lOGToolStripMenuItem.Text = "LOG";
+            this.lOGToolStripMenuItem.Click += new System.EventHandler(this.lOGToolStripMenuItem_Click);
             // 
             // ucSwitch_rectify
             // 
@@ -155,7 +164,7 @@
             this.ucSwitch_rectify.Checked = false;
             this.ucSwitch_rectify.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.ucSwitch_rectify.FalseTextColr = System.Drawing.Color.White;
-            this.ucSwitch_rectify.Location = new System.Drawing.Point(121, 13);
+            this.ucSwitch_rectify.Location = new System.Drawing.Point(239, 570);
             this.ucSwitch_rectify.Name = "ucSwitch_rectify";
             this.ucSwitch_rectify.Size = new System.Drawing.Size(53, 19);
             this.ucSwitch_rectify.SwitchType = HZH_Controls.Controls.SwitchType.Line;
@@ -166,24 +175,23 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.ucSwitch_rectify);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.ucBtn_capture);
             this.panel1.Controls.Add(this.ucBtn_restart);
             this.panel1.Controls.Add(this.ucBtn_pause);
             this.panel1.Controls.Add(this.ucBtn_close);
             this.panel1.Controls.Add(this.ucBtn_open);
-            this.panel1.Location = new System.Drawing.Point(668, 558);
+            this.panel1.Location = new System.Drawing.Point(962, 553);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(669, 46);
+            this.panel1.Size = new System.Drawing.Size(376, 54);
             this.panel1.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 15);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(133, 569);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 15);
+            this.label1.Size = new System.Drawing.Size(114, 20);
             this.label1.TabIndex = 11;
             this.label1.Text = "显示矫正图像：";
             // 
@@ -202,7 +210,7 @@
             this.ucBtn_capture.IsRadius = true;
             this.ucBtn_capture.IsShowRect = true;
             this.ucBtn_capture.IsShowTips = false;
-            this.ucBtn_capture.Location = new System.Drawing.Point(595, 6);
+            this.ucBtn_capture.Location = new System.Drawing.Point(303, 11);
             this.ucBtn_capture.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtn_capture.Name = "ucBtn_capture";
             this.ucBtn_capture.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
@@ -212,6 +220,7 @@
             this.ucBtn_capture.TabStop = false;
             this.ucBtn_capture.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucBtn_capture.TipsText = "";
+            this.ucBtn_capture.BtnClick += new System.EventHandler(this.ucBtn_capture_BtnClick);
             // 
             // ucBtn_restart
             // 
@@ -228,7 +237,7 @@
             this.ucBtn_restart.IsRadius = true;
             this.ucBtn_restart.IsShowRect = true;
             this.ucBtn_restart.IsShowTips = false;
-            this.ucBtn_restart.Location = new System.Drawing.Point(522, 6);
+            this.ucBtn_restart.Location = new System.Drawing.Point(230, 11);
             this.ucBtn_restart.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtn_restart.Name = "ucBtn_restart";
             this.ucBtn_restart.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
@@ -255,7 +264,7 @@
             this.ucBtn_pause.IsRadius = true;
             this.ucBtn_pause.IsShowRect = true;
             this.ucBtn_pause.IsShowTips = false;
-            this.ucBtn_pause.Location = new System.Drawing.Point(449, 6);
+            this.ucBtn_pause.Location = new System.Drawing.Point(157, 11);
             this.ucBtn_pause.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtn_pause.Name = "ucBtn_pause";
             this.ucBtn_pause.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
@@ -282,7 +291,7 @@
             this.ucBtn_close.IsRadius = true;
             this.ucBtn_close.IsShowRect = true;
             this.ucBtn_close.IsShowTips = false;
-            this.ucBtn_close.Location = new System.Drawing.Point(376, 6);
+            this.ucBtn_close.Location = new System.Drawing.Point(84, 11);
             this.ucBtn_close.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtn_close.Name = "ucBtn_close";
             this.ucBtn_close.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
@@ -309,7 +318,7 @@
             this.ucBtn_open.IsRadius = true;
             this.ucBtn_open.IsShowRect = true;
             this.ucBtn_open.IsShowTips = false;
-            this.ucBtn_open.Location = new System.Drawing.Point(303, 6);
+            this.ucBtn_open.Location = new System.Drawing.Point(11, 11);
             this.ucBtn_open.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtn_open.Name = "ucBtn_open";
             this.ucBtn_open.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
@@ -321,17 +330,102 @@
             this.ucBtn_open.TipsText = "";
             this.ucBtn_open.BtnClick += new System.EventHandler(this.ucBtn_open_BtnClick);
             // 
+            // saveFileDialog_pic
+            // 
+            this.saveFileDialog_pic.RestoreDirectory = true;
+            this.saveFileDialog_pic.Title = "请选择文件保存路径";
+            // 
+            // ucCheckBox_top
+            // 
+            this.ucCheckBox_top.BackColor = System.Drawing.Color.Transparent;
+            this.ucCheckBox_top.Checked = false;
+            this.ucCheckBox_top.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucCheckBox_top.Location = new System.Drawing.Point(22, 564);
+            this.ucCheckBox_top.Name = "ucCheckBox_top";
+            this.ucCheckBox_top.Padding = new System.Windows.Forms.Padding(1);
+            this.ucCheckBox_top.Size = new System.Drawing.Size(117, 30);
+            this.ucCheckBox_top.TabIndex = 11;
+            this.ucCheckBox_top.TextValue = "始终置顶";
+            this.ucCheckBox_top.CheckedChangeEvent += new System.EventHandler(this.ucCheckBox_top_CheckedChangeEvent);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.settingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // ucBtnExt_readCamParm
+            // 
+            this.ucBtnExt_readCamParm.BackColor = System.Drawing.Color.White;
+            this.ucBtnExt_readCamParm.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnExt_readCamParm.BtnFont = new System.Drawing.Font("Times New Roman", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucBtnExt_readCamParm.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt_readCamParm.BtnText = "ReadCamParm";
+            this.ucBtnExt_readCamParm.ConerRadius = 8;
+            this.ucBtnExt_readCamParm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt_readCamParm.EnabledMouseEffect = true;
+            this.ucBtnExt_readCamParm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBtnExt_readCamParm.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucBtnExt_readCamParm.IsRadius = true;
+            this.ucBtnExt_readCamParm.IsShowRect = true;
+            this.ucBtnExt_readCamParm.IsShowTips = false;
+            this.ucBtnExt_readCamParm.Location = new System.Drawing.Point(442, 564);
+            this.ucBtnExt_readCamParm.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnExt_readCamParm.Name = "ucBtnExt_readCamParm";
+            this.ucBtnExt_readCamParm.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt_readCamParm.RectWidth = 1;
+            this.ucBtnExt_readCamParm.Size = new System.Drawing.Size(108, 32);
+            this.ucBtnExt_readCamParm.TabIndex = 2;
+            this.ucBtnExt_readCamParm.TabStop = false;
+            this.ucBtnExt_readCamParm.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnExt_readCamParm.TipsText = "";
+            this.ucBtnExt_readCamParm.BtnClick += new System.EventHandler(this.ucBtnExt_readCamParm_BtnClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(289, 569);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "显示对准线：";
+            // 
+            // ucSwitch1
+            // 
+            this.ucSwitch1.BackColor = System.Drawing.Color.Transparent;
+            this.ucSwitch1.Checked = false;
+            this.ucSwitch1.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ucSwitch1.FalseTextColr = System.Drawing.Color.White;
+            this.ucSwitch1.Location = new System.Drawing.Point(379, 570);
+            this.ucSwitch1.Name = "ucSwitch1";
+            this.ucSwitch1.Size = new System.Drawing.Size(53, 19);
+            this.ucSwitch1.SwitchType = HZH_Controls.Controls.SwitchType.Line;
+            this.ucSwitch1.TabIndex = 13;
+            this.ucSwitch1.Texts = null;
+            this.ucSwitch1.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucSwitch1.TrueTextColr = System.Drawing.Color.White;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1346, 612);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ucSwitch1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ucSwitch_rectify);
+            this.Controls.Add(this.ucBtnExt_readCamParm);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip_fun);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ucCheckBox_top);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStrip_fun;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "MachineVersionControl";
@@ -340,10 +434,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIpl_left)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIpl_right)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip_fun.ResumeLayout(false);
+            this.menuStrip_fun.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,7 +445,7 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip_fun;
         private System.Windows.Forms.ToolStripMenuItem 图像处理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 立体测量ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBB机器人运动控制ToolStripMenuItem;
@@ -368,6 +461,12 @@
         private System.Windows.Forms.Label label1;
         private OpenCvSharp.UserInterface.PictureBoxIpl pictureBoxIpl_left;
         private OpenCvSharp.UserInterface.PictureBoxIpl pictureBoxIpl_right;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog_pic;
+        private HZH_Controls.Controls.UCCheckBox ucCheckBox_top;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private HZH_Controls.Controls.UCBtnExt ucBtnExt_readCamParm;
+        private System.Windows.Forms.Label label2;
+        private HZH_Controls.Controls.UCSwitch ucSwitch1;
     }
 }
 
