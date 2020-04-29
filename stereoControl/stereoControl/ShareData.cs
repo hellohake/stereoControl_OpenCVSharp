@@ -36,8 +36,17 @@ namespace stereoControl
         private static Mat comImg = new Mat();
         private static Mat leftImg = new Mat();
         private static Mat rightImg = new Mat();
-
         private static string logString = null;
+
+        //相机标定参数
+        private static Mat _leftCamIntrinsic = new Mat();
+        private static Mat _rightCamIntrinsic = new Mat();
+        private static Mat _leftDistCoeffs = new Mat();
+        private static Mat _rightDistCoeffs = new Mat();
+        private static Mat _R = new Mat();
+        private static Mat _T = new Mat();
+        private static Mat _E = new Mat();
+        private static Mat _F = new Mat();
 
         //封装属性
         public static Mat ComImg
@@ -84,5 +93,97 @@ namespace stereoControl
                 return logString;
             }
         }
+
+        public static Mat leftCamIntrinsic
+        {
+            set
+            {
+                _leftCamIntrinsic = value;
+            }
+            get
+            {
+                return _leftCamIntrinsic;
+            }
+        }
+        public static Mat rightCamIntrinsic
+        {
+            set
+            {
+                _rightCamIntrinsic = value;
+            }
+            get
+            {
+                return _rightCamIntrinsic;
+            }
+        }
+        public static Mat leftDistCoeffs
+        {
+            set
+            {
+                _leftDistCoeffs = value;
+            }
+            get
+            {
+                return _leftDistCoeffs;
+            }
+        }
+        public static Mat rightDistCoeffs
+        {
+            set
+            {
+                _rightDistCoeffs = value;
+            }
+            get
+            {
+                return _rightDistCoeffs;
+            }
+        }
+
+        public static Mat R
+        {
+            set
+            {
+                _R = value;
+            }
+            get
+            {
+                return _R;
+            }
+        }
+        public static Mat T
+        {
+            set
+            {
+                _T = value;
+            }
+            get
+            {
+                return _T;
+            }
+        }
+        public static Mat E
+        {
+            set
+            {
+                _E = value;
+            }
+            get
+            {
+                return _E;
+            }
+        }
+        public static Mat F
+        {
+            set
+            {
+                _F = value;
+            }
+            get
+            {
+                return _F;
+            }
+        }
+
+
     }
 }

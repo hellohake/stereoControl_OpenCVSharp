@@ -12,6 +12,7 @@ using OpenCvSharp;                  //添加命名空间
 using HZH_Controls.Forms;
 using HZH_Controls.Controls;
 using System.Threading;
+using System.IO;
 
 namespace stereoControl
 {
@@ -24,13 +25,17 @@ namespace stereoControl
         private Mat comImg = new Mat();
         private Mat leftImg = new Mat();
         private Mat rightImg = new Mat();
-
         //标志位
-        private bool DOUBLECAM_OPEN = false;
-        private bool DOUBLECAM_PAUSE = false;
+        private bool IS_DOUBLECAM_OPEN = false;
+        private bool IS_DOUBLECAM_PAUSE = false;
+        private bool IS_SHOW_RECTIFYIMAGE = false;
+        private bool IS_SHOW_RECTIFYLINE = false;
         //窗体
         private LogView logWin;
-
+        private Settings settingWin;
+        //存储文件路径信息
+        private DirectoryInfo rootDir;
+        private string camParmyaml;
         public Form1()
         {
             InitializeComponent();               
@@ -63,7 +68,7 @@ namespace stereoControl
                     return;
                }
             }
-            if(DOUBLECAM_OPEN)          //摄像头打开
+            if(IS_DOUBLECAM_OPEN)          //摄像头打开
             {
                 cap.Read(comImg);
                 if (comImg.Data == null)
@@ -79,7 +84,7 @@ namespace stereoControl
             else
             {
                 //关闭摄像机
-                if(!DOUBLECAM_PAUSE)
+                if(!IS_DOUBLECAM_PAUSE)
                 {
                     this.pictureBoxIpl_left.ImageIpl = null;
                     this.pictureBoxIpl_right.ImageIpl = null;
@@ -93,10 +98,10 @@ namespace stereoControl
         //打开摄像头
         private void ucBtn_open_BtnClick(object sender, EventArgs e)
         {
-            if(!DOUBLECAM_OPEN)
+            if(!IS_DOUBLECAM_OPEN)
             {
                 ShareData.Log = "[msg] 摄像头已打开";
-                DOUBLECAM_OPEN = true;
+                IS_DOUBLECAM_OPEN = true;
             }
             else
             {
@@ -105,25 +110,25 @@ namespace stereoControl
         //关闭摄像头
         private void ucBtn_close_BtnClick(object sender, EventArgs e)
         {
-            if(DOUBLECAM_OPEN)
+            if(IS_DOUBLECAM_OPEN)
             {
                 ShareData.Log = "[msg] 摄像头已关闭";
-                DOUBLECAM_OPEN = false;
-                DOUBLECAM_PAUSE = false;
+                IS_DOUBLECAM_OPEN = false;
+                IS_DOUBLECAM_PAUSE = false;
             }
             else
             {
-                DOUBLECAM_PAUSE = false;
+                IS_DOUBLECAM_PAUSE = false;
             }
         }
         //暂停摄像头
         private void ucBtn_pause_BtnClick(object sender, EventArgs e)
         {
-            if(DOUBLECAM_OPEN)
+            if(IS_DOUBLECAM_OPEN)
             {
                 ShareData.Log = "[msg] 摄像头已暂停";
-                DOUBLECAM_OPEN = false;
-                DOUBLECAM_PAUSE = true;
+                IS_DOUBLECAM_OPEN = false;
+                IS_DOUBLECAM_PAUSE = true;
             }
             else
             {
@@ -132,21 +137,21 @@ namespace stereoControl
         //重新启动摄像头
         private void ucBtn_restart_BtnClick(object sender, EventArgs e)
         {
-            if(DOUBLECAM_OPEN)
+            if(IS_DOUBLECAM_OPEN)
             {
             }
             else
             {
                 ShareData.Log = "[msg] 摄像头已重启";
-                DOUBLECAM_OPEN = true;
-                DOUBLECAM_PAUSE = false;
+                IS_DOUBLECAM_OPEN = true;
+                IS_DOUBLECAM_PAUSE = false;
             }
         }
         //捕获当前图片（实现拍照功能）
         private void ucBtn_capture_BtnClick(object sender, EventArgs e)
         {
             //当相机关闭时
-            if(!DOUBLECAM_PAUSE && !DOUBLECAM_OPEN)
+            if(!IS_DOUBLECAM_PAUSE && !IS_DOUBLECAM_OPEN)
             {
                 if(FrmDialog.ShowDialog(this,"必须打开摄像头才能拍照","Warning")== DialogResult.OK)
                 {
@@ -181,7 +186,7 @@ namespace stereoControl
             logWin.Show();
             ShareData.Log = "[msg] LogView已打开";
         }
-        //主窗体是否置顶
+        //主窗体置顶
         private void ucCheckBox_top_CheckedChangeEvent(object sender, EventArgs e)
         {
             if(this.ucCheckBox_top.Checked)
@@ -195,6 +200,44 @@ namespace stereoControl
         }
         //读入相机标定数据
         private void ucBtnExt_readCamParm_BtnClick(object sender, EventArgs e)
+        {
+            rootDir = Directory.GetParent(Environment.CurrentDirectory);    //定位bin目录
+            camParmyaml = rootDir.Parent.Parent.FullName + @"\CamParm.yaml";//获取文件名称
+            using (var fs = new FileStorage(camParmyaml,FileStorage.Mode.Read))
+            {
+                ShareData.leftCamIntrinsic = fs["leftCamMatrix"].ReadMat();
+                ShareData.leftDistCoeffs = fs["leftDistCoeffs"].ReadMat();
+                ShareData.rightCamIntrinsic = fs["rightCamMatrix"].ReadMat();
+                ShareData.rightDistCoeffs = fs["rightDistCoeffs"].ReadMat();
+                ShareData.R = fs["R"].ReadMat();
+                ShareData.T = fs["T"].ReadMat();
+                ShareData.E = fs["E"].ReadMat();
+                ShareData.F = fs["F"].ReadMat();
+            }
+            ShareData.Log = "[msg] 相机参数读入成功";            
+        }
+        //打开相机设置选项卡
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShareData.Log = "[msg] Settings窗口已打开";
+            settingWin = GenericSingleton<Settings>.CreateInstance();
+            //按照模态窗体方式打开
+            settingWin.ShowDialog();   
+        }
+        //显示矫正图像
+        private void ucSwitch_rectify_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.ucSwitch_rectify.Checked)
+            {
+                IS_SHOW_RECTIFYIMAGE = true;
+            }
+            else
+            {
+                IS_SHOW_RECTIFYIMAGE = false;
+            }
+        }
+        //显示矫正线
+        private void ucSwitch_line_CheckedChanged(object sender, EventArgs e)
         {
 
         }
