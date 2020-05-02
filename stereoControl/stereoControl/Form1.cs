@@ -30,6 +30,7 @@ namespace stereoControl
         private bool IS_DOUBLECAM_PAUSE = false;
         private bool IS_SHOW_RECTIFYIMAGE = false;
         private bool IS_SHOW_RECTIFYLINE = false;
+        private bool IS_READPARM = false;
         //窗体
         private LogView logWin;
         private Settings settingWin;
@@ -57,34 +58,57 @@ namespace stereoControl
             //初始化定时器
             camTim = new System.Threading.Timer(picCapThread, null, 0, 50);
         }
+        private delegate void UpdateMainUI();
         //捕获摄像机图像线程定时器
         private void picCapThread(object state)
         {
-            if(!cap.IsOpened())
+            if (!cap.IsOpened())
             {
-               if(FrmDialog.ShowDialog(this, "双目相机连接失败", "Error")==DialogResult.OK)
-               {
+                if (FrmDialog.ShowDialog(this, "双目相机连接失败", "Error") == DialogResult.OK)
+                {
                     //执行连接失败处理
                     return;
-               }
+                }
             }
-            if(IS_DOUBLECAM_OPEN)          //摄像头打开
+            if (IS_DOUBLECAM_OPEN)          //摄像头打开
             {
                 cap.Read(comImg);
                 if (comImg.Data == null)
                 {
                     return;
                 }
-                leftImg = new Mat(comImg, new Rect(0, 0, 640, 480)).Clone();    //深拷贝图像
-                rightImg = new Mat(comImg, new Rect(640, 0, 640, 480)).Clone(); //深拷贝图像
-
+                if (!IS_SHOW_RECTIFYIMAGE)
+                {
+                    leftImg = new Mat(comImg, new Rect(0, 0, 640, 480)).Clone();    //深拷贝图像
+                    rightImg = new Mat(comImg, new Rect(640, 0, 640, 480)).Clone(); //深拷贝图像                    
+                }
+                if (IS_SHOW_RECTIFYIMAGE)                   //立体校正
+                {
+                    Mat _leftImg = new Mat(comImg, new Rect(0, 0, 640, 480)).Clone();    //深拷贝图像
+                    Mat _rightImg = new Mat(comImg, new Rect(640, 0, 640, 480)).Clone(); //深拷贝图像
+                    Cv2.Remap(_leftImg, leftImg, ShareData.leftMap1, ShareData.leftMap2, InterpolationFlags.Linear);
+                    Cv2.Remap(_rightImg, rightImg, ShareData.rightMap1, ShareData.rightMap2, InterpolationFlags.Linear);
+                    //可有可无
+                    //Cv2.Resize(leftImg, leftImg, new OpenCvSharp.Size(640, 480));
+                    //Cv2.Resize(rightImg, rightImg, new OpenCvSharp.Size(640, 480));
+                }
+                if (IS_SHOW_RECTIFYLINE)
+                {
+                    for (int i = 20; i < 480; i += 20)
+                    {
+                        Cv2.Line(leftImg, new OpenCvSharp.Point(0, i), new OpenCvSharp.Point(640, i),
+                                 new Scalar(0, 0, 255));
+                        Cv2.Line(rightImg, new OpenCvSharp.Point(0, i), new OpenCvSharp.Point(640, i),
+                                 new Scalar(0, 0, 255));
+                    }
+                }
                 this.pictureBoxIpl_left.ImageIpl = leftImg;
                 this.pictureBoxIpl_right.ImageIpl = rightImg;
             }
             else
             {
                 //关闭摄像机
-                if(!IS_DOUBLECAM_PAUSE)
+                if (!IS_DOUBLECAM_PAUSE)
                 {
                     this.pictureBoxIpl_left.ImageIpl = null;
                     this.pictureBoxIpl_right.ImageIpl = null;
@@ -92,9 +116,15 @@ namespace stereoControl
                     this.comImg = new Mat();
                     this.leftImg = new Mat();
                     this.rightImg = new Mat();
-                }                
+                }
             }
+            //this.Invoke(new UpdateMainUI(updateMainUI), new object[] { });
         }
+
+        private void updateMainUI()
+        {            
+        }
+
         //打开摄像头
         private void ucBtn_open_BtnClick(object sender, EventArgs e)
         {
@@ -205,16 +235,30 @@ namespace stereoControl
             camParmyaml = rootDir.Parent.Parent.FullName + @"\CamParm.yaml";//获取文件名称
             using (var fs = new FileStorage(camParmyaml,FileStorage.Mode.Read))
             {
-                ShareData.leftCamIntrinsic = fs["leftCamMatrix"].ReadMat();
+                ShareData.leftCamIntrinsic = fs["leftCamIntrinsic"].ReadMat();
                 ShareData.leftDistCoeffs = fs["leftDistCoeffs"].ReadMat();
-                ShareData.rightCamIntrinsic = fs["rightCamMatrix"].ReadMat();
+                ShareData.rightCamIntrinsic = fs["rightCamIntrinsic"].ReadMat();
                 ShareData.rightDistCoeffs = fs["rightDistCoeffs"].ReadMat();
                 ShareData.R = fs["R"].ReadMat();
                 ShareData.T = fs["T"].ReadMat();
                 ShareData.E = fs["E"].ReadMat();
                 ShareData.F = fs["F"].ReadMat();
             }
-            ShareData.Log = "[msg] 相机参数读入成功";            
+            ///使用640 * 480图片的分辨率重新采集图像 计算数值             
+            OpenCvSharp.Size imgSize = new OpenCvSharp.Size(640,480);
+            //注意 这里传入的参数 必须符合规定格式
+            Cv2.StereoRectify(ShareData.leftCamIntrinsic, ShareData.leftDistCoeffs, ShareData.rightCamIntrinsic,
+                              ShareData.rightDistCoeffs, imgSize, ShareData.R, ShareData.T,
+                              ShareData.R1, ShareData.R2, ShareData.P1, ShareData.P2, ShareData.Q, StereoRectificationFlags.ZeroDisparity,
+                              -1, imgSize, out ShareData.PixROI1, out ShareData.PixROI2);
+            //计算左右相机校正映射 ， 映射为定点表示形式
+            Cv2.InitUndistortRectifyMap(ShareData.leftCamIntrinsic, ShareData.leftDistCoeffs, ShareData.R1, ShareData.P1,
+                                        imgSize, MatType.CV_16SC2, ShareData.leftMap1, ShareData.leftMap2);
+            Cv2.InitUndistortRectifyMap(ShareData.rightCamIntrinsic, ShareData.rightDistCoeffs, ShareData.R2, ShareData.P2,
+                                        imgSize, MatType.CV_16SC2, ShareData.rightMap1, ShareData.rightMap2);
+            //标志位置1
+            this.IS_READPARM = true;
+            ShareData.Log = "[msg] 相机参数读入计算成功";            
         }
         //打开相机设置选项卡
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -226,20 +270,52 @@ namespace stereoControl
         }
         //显示矫正图像
         private void ucSwitch_rectify_CheckedChanged(object sender, EventArgs e)
-        {
-            if(this.ucSwitch_rectify.Checked)
+        {                        
+            if(IS_READPARM)
             {
-                IS_SHOW_RECTIFYIMAGE = true;
+                if (this.ucSwitch_rectify.Checked)
+                {
+                    IS_SHOW_RECTIFYIMAGE = true;
+                }
+                else
+                {
+                    IS_SHOW_RECTIFYIMAGE = false;
+                }
             }
             else
             {
-                IS_SHOW_RECTIFYIMAGE = false;
-            }
+                if (FrmDialog.ShowDialog(this, "请先读入相机标定系数", "Warning") == DialogResult.OK)
+                {
+                    //this.ucSwitch_rectify.Checked = false;                   
+                }
+            }            
         }
         //显示矫正线
         private void ucSwitch_line_CheckedChanged(object sender, EventArgs e)
+        {            
+            if(IS_READPARM)
+            {
+                if (this.ucSwitch_line.Checked)
+                {
+                    this.IS_SHOW_RECTIFYLINE = true;
+                }
+                else
+                {
+                    this.IS_SHOW_RECTIFYLINE = false;
+                }
+            }
+            else
+            {
+                if (FrmDialog.ShowDialog(this, "请先读入相机标定系数", "Warning") == DialogResult.OK)
+                {
+                    this.ucSwitch_line.Checked = false;
+                }
+            }
+        }
+        //窗体关闭前释放资源
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            camTim.Change(-1, 50);
         }
     }
 }

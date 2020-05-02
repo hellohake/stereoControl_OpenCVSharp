@@ -26,8 +26,9 @@ namespace stereoControl
         private void LogView_Load(object sender, EventArgs e)
         {            
             this.richTextBox_log.Text = "";
-            this.ucCheckBox_log.Checked = true;
-            this.TopMost = true;
+            //默认不置顶
+            this.ucCheckBox_log.Checked = false;
+            this.TopMost = false;
             logTim = new System.Threading.Timer(logRefresh, null, 0, 100);
         }
 

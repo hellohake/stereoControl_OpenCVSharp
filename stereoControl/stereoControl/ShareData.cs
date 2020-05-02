@@ -47,6 +47,18 @@ namespace stereoControl
         private static Mat _T = new Mat();
         private static Mat _E = new Mat();
         private static Mat _F = new Mat();
+        private static Mat _R1 = new Mat();
+        private static Mat _R2 = new Mat();
+        private static Mat _P1 = new Mat();
+        private static Mat _P2 = new Mat();
+        private static Mat _Q = new Mat();
+        //公共静态变量
+        public static Rect PixROI1 = new Rect();
+        public static Rect PixROI2 = new Rect();
+        public static Mat leftMap1 = new Mat();
+        public static Mat leftMap2 = new Mat();
+        public static Mat rightMap1 = new Mat();
+        public static Mat rightMap2 = new Mat();
 
         //封装属性
         public static Mat ComImg
@@ -184,6 +196,62 @@ namespace stereoControl
             }
         }
 
-
+        public static Mat R1
+        {
+            set
+            {
+                _R1 = value;
+            }
+            get
+            {
+                return _R1;
+            }
+        }
+        public static Mat R2
+        {
+            set
+            {
+                _R2 = value;
+            }
+            get
+            {
+                return _R2;
+            }
+        }
+        public static Mat P1
+        {
+            set
+            {
+                _P1 = value;
+            }
+            get
+            {
+                return _P1;
+            }
+        }
+        public static Mat P2
+        {
+            set
+            {
+                _P2 = value;
+            }
+            get
+            {
+                return _P2;
+            }
+        }
+        public static Mat Q
+        {
+            set
+            {
+                _Q = value;
+            }
+            get
+            {
+                return _Q;
+            }
+        }
+        
+        
     }
 }

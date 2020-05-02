@@ -39,7 +39,7 @@
             // 
             this.ucCheckBox_log.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ucCheckBox_log.BackColor = System.Drawing.Color.Transparent;
-            this.ucCheckBox_log.Checked = true;
+            this.ucCheckBox_log.Checked = false;
             this.ucCheckBox_log.Font = new System.Drawing.Font("宋体", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ucCheckBox_log.Location = new System.Drawing.Point(1, 484);
             this.ucCheckBox_log.Name = "ucCheckBox_log";
