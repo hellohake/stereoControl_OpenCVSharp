@@ -34,6 +34,7 @@ namespace stereoControl
         //窗体
         private LogView logWin;
         private Settings settingWin;
+        private DisparityMeasure stereoMeasureWin;
         //存储文件路径信息
         private DirectoryInfo rootDir;
         private string camParmyaml;
@@ -89,8 +90,8 @@ namespace stereoControl
                     Cv2.Remap(_leftImg, leftImg, ShareData.leftMap1, ShareData.leftMap2, InterpolationFlags.Linear);
                     Cv2.Remap(_rightImg, rightImg, ShareData.rightMap1, ShareData.rightMap2, InterpolationFlags.Linear);
                     //可有可无
-                    //Cv2.Resize(leftImg, leftImg, new OpenCvSharp.Size(640, 480));
-                    //Cv2.Resize(rightImg, rightImg, new OpenCvSharp.Size(640, 480));
+                    Cv2.Resize(leftImg, leftImg, new OpenCvSharp.Size(640, 480));
+                    Cv2.Resize(rightImg, rightImg, new OpenCvSharp.Size(640, 480));
                 }
                 if (IS_SHOW_RECTIFYLINE)
                 {
@@ -102,6 +103,10 @@ namespace stereoControl
                                  new Scalar(0, 0, 255));
                     }
                 }
+                //备份
+                ShareData.LeftImg = leftImg;
+                ShareData.RightImg = rightImg;
+                //显示图像
                 this.pictureBoxIpl_left.ImageIpl = leftImg;
                 this.pictureBoxIpl_right.ImageIpl = rightImg;
             }
@@ -316,6 +321,13 @@ namespace stereoControl
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             camTim.Change(-1, 50);
+        }
+        //打开立体测量对话框
+        private void 立体测量ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShareData.Log = "[msg] 立体测量窗口已打开";
+            stereoMeasureWin = GenericSingleton<DisparityMeasure>.CreateInstance();
+            stereoMeasureWin.Show();
         }
     }
 }

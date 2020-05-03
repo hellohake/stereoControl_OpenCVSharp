@@ -134,6 +134,7 @@
             this.立体测量ToolStripMenuItem.Name = "立体测量ToolStripMenuItem";
             this.立体测量ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.立体测量ToolStripMenuItem.Text = "立体测量";
+            this.立体测量ToolStripMenuItem.Click += new System.EventHandler(this.立体测量ToolStripMenuItem_Click);
             // 
             // aBB机器人运动控制ToolStripMenuItem
             // 
