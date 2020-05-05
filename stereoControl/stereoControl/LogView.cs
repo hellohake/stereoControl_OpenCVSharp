@@ -72,5 +72,11 @@ namespace stereoControl
         {
             //暂不实现
         }
+        //richTextBox自动定位至最底部
+        private void richTextBox_log_TextChanged(object sender, EventArgs e)
+        {
+            richTextBox_log.SelectionStart = richTextBox_log.Text.Length;
+            richTextBox_log.ScrollToCaret();
+        }
     }
 }

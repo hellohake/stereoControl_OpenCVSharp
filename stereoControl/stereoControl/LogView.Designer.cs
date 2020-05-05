@@ -41,10 +41,11 @@
             this.ucCheckBox_log.BackColor = System.Drawing.Color.Transparent;
             this.ucCheckBox_log.Checked = false;
             this.ucCheckBox_log.Font = new System.Drawing.Font("宋体", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ucCheckBox_log.Location = new System.Drawing.Point(1, 484);
+            this.ucCheckBox_log.Location = new System.Drawing.Point(1, 387);
+            this.ucCheckBox_log.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ucCheckBox_log.Name = "ucCheckBox_log";
             this.ucCheckBox_log.Padding = new System.Windows.Forms.Padding(1);
-            this.ucCheckBox_log.Size = new System.Drawing.Size(102, 30);
+            this.ucCheckBox_log.Size = new System.Drawing.Size(76, 24);
             this.ucCheckBox_log.TabIndex = 1;
             this.ucCheckBox_log.TextValue = "始终置顶";
             this.ucCheckBox_log.CheckedChangeEvent += new System.EventHandler(this.ucCheckBox_log_CheckedChangeEvent);
@@ -65,12 +66,12 @@
             this.ucBtnExt_clear.IsRadius = true;
             this.ucBtnExt_clear.IsShowRect = true;
             this.ucBtnExt_clear.IsShowTips = false;
-            this.ucBtnExt_clear.Location = new System.Drawing.Point(213, 488);
+            this.ucBtnExt_clear.Location = new System.Drawing.Point(160, 390);
             this.ucBtnExt_clear.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt_clear.Name = "ucBtnExt_clear";
             this.ucBtnExt_clear.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.ucBtnExt_clear.RectWidth = 1;
-            this.ucBtnExt_clear.Size = new System.Drawing.Size(56, 23);
+            this.ucBtnExt_clear.Size = new System.Drawing.Size(42, 18);
             this.ucBtnExt_clear.TabIndex = 2;
             this.ucBtnExt_clear.TabStop = false;
             this.ucBtnExt_clear.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
@@ -93,12 +94,12 @@
             this.ucBtnExt_save.IsRadius = true;
             this.ucBtnExt_save.IsShowRect = true;
             this.ucBtnExt_save.IsShowTips = false;
-            this.ucBtnExt_save.Location = new System.Drawing.Point(275, 488);
+            this.ucBtnExt_save.Location = new System.Drawing.Point(206, 390);
             this.ucBtnExt_save.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt_save.Name = "ucBtnExt_save";
             this.ucBtnExt_save.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.ucBtnExt_save.RectWidth = 1;
-            this.ucBtnExt_save.Size = new System.Drawing.Size(56, 23);
+            this.ucBtnExt_save.Size = new System.Drawing.Size(42, 18);
             this.ucBtnExt_save.TabIndex = 3;
             this.ucBtnExt_save.TabStop = false;
             this.ucBtnExt_save.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
@@ -112,24 +113,27 @@
             this.richTextBox_log.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox_log.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.richTextBox_log.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox_log.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox_log.Name = "richTextBox_log";
             this.richTextBox_log.ReadOnly = true;
             this.richTextBox_log.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox_log.Size = new System.Drawing.Size(330, 480);
+            this.richTextBox_log.Size = new System.Drawing.Size(248, 384);
             this.richTextBox_log.TabIndex = 4;
             this.richTextBox_log.Text = "";
+            this.richTextBox_log.TextChanged += new System.EventHandler(this.richTextBox_log_TextChanged);
             // 
             // LogView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(332, 514);
+            this.ClientSize = new System.Drawing.Size(249, 411);
             this.Controls.Add(this.richTextBox_log);
             this.Controls.Add(this.ucBtnExt_save);
             this.Controls.Add(this.ucBtnExt_clear);
             this.Controls.Add(this.ucCheckBox_log);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LogView";

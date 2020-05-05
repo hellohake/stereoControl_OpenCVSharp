@@ -97,6 +97,12 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="sgbmImgChoose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sgbmImgChoose.Designer.cs">
+      <DependentUpon>sgbmImgChoose.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShareData.cs" />
     <EmbeddedResource Include="DisparityMeasure.resx">
       <DependentUpon>DisparityMeasure.cs</DependentUpon>
@@ -121,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sgbmImgChoose.resx">
+      <DependentUpon>sgbmImgChoose.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
