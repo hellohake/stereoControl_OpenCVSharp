@@ -48,6 +48,7 @@
             this.textBox_leftImg.Name = "textBox_leftImg";
             this.textBox_leftImg.Size = new System.Drawing.Size(336, 23);
             this.textBox_leftImg.TabIndex = 0;
+            this.textBox_leftImg.TextChanged += new System.EventHandler(this.textBox_leftImg_TextChanged);
             // 
             // textBox_rightImg
             // 
@@ -57,6 +58,7 @@
             this.textBox_rightImg.Name = "textBox_rightImg";
             this.textBox_rightImg.Size = new System.Drawing.Size(336, 23);
             this.textBox_rightImg.TabIndex = 1;
+            this.textBox_rightImg.TextChanged += new System.EventHandler(this.textBox_rightImg_TextChanged);
             // 
             // leftImgBrowse_Btn
             // 
@@ -141,6 +143,7 @@
             this.Controls.Add(this.textBox_rightImg);
             this.Controls.Add(this.textBox_leftImg);
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "sgbmImgChoose";

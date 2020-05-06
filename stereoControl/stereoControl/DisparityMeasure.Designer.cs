@@ -71,34 +71,71 @@
             this.textBox_uniquenessRatio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ucBtnExt_sgbmparmDefauult = new HZH_Controls.Controls.UCBtnExt();
+            this.ucBtnExt_writeSgbmParm = new HZH_Controls.Controls.UCBtnExt();
+            this.numericUpDown_speckcleRange = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_speckleWinSize = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_disp12MaxDiff = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_uniquenessRatio = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_p2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_p1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_numOfDisparities = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_minDisparity = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_sadWinSize = new System.Windows.Forms.NumericUpDown();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.numericUpDown_preFilterCap = new System.Windows.Forms.NumericUpDown();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.ucPanelQuote1 = new HZH_Controls.Controls.UCPanelQuote();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox_zpos = new System.Windows.Forms.TextBox();
+            this.textBox_ypos = new System.Windows.Forms.TextBox();
+            this.textBox_xpos = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ucBtnExt3 = new HZH_Controls.Controls.UCBtnExt();
-            this.ucBtnExt_sgbmrefresh = new HZH_Controls.Controls.UCBtnExt();
+            this.ucBtnExt_sgbmclose = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt_sgbmChangeImg = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt_sgbmDisCal = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt_sgbmLoadImg = new HZH_Controls.Controls.UCBtnExt();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ucBtnExt_bmClose = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt_restart = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt_pause = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt_bmImg = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt_bmDisCal = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt_bmchangeImg = new HZH_Controls.Controls.UCBtnExt();
             this.timer_disparityMeasure = new System.Windows.Forms.Timer(this.components);
-            this.textBox_xpos = new System.Windows.Forms.TextBox();
-            this.textBox_ypos = new System.Windows.Forms.TextBox();
-            this.textBox_zpos = new System.Windows.Forms.TextBox();
-            this.ucBtnExt1 = new HZH_Controls.Controls.UCBtnExt();
+            this.ucBtnExt_sgbmrefresh = new HZH_Controls.Controls.UCBtnExt();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIpl_Img)).BeginInit();
             this.tabControlExt1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_speckcleRange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_speckleWinSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_disp12MaxDiff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_uniquenessRatio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_p2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_p1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_numOfDisparities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_minDisparity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_sadWinSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_preFilterCap)).BeginInit();
             this.ucPanelQuote1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -205,7 +242,7 @@
             this.ucBtnExt_parmdefault.IsRadius = true;
             this.ucBtnExt_parmdefault.IsShowRect = true;
             this.ucBtnExt_parmdefault.IsShowTips = false;
-            this.ucBtnExt_parmdefault.Location = new System.Drawing.Point(14, 389);
+            this.ucBtnExt_parmdefault.Location = new System.Drawing.Point(14, 406);
             this.ucBtnExt_parmdefault.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt_parmdefault.Name = "ucBtnExt_parmdefault";
             this.ucBtnExt_parmdefault.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
@@ -232,7 +269,7 @@
             this.ucBtnExt_writeBMParm.IsRadius = true;
             this.ucBtnExt_writeBMParm.IsShowRect = true;
             this.ucBtnExt_writeBMParm.IsShowTips = false;
-            this.ucBtnExt_writeBMParm.Location = new System.Drawing.Point(85, 389);
+            this.ucBtnExt_writeBMParm.Location = new System.Drawing.Point(85, 406);
             this.ucBtnExt_writeBMParm.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt_writeBMParm.Name = "ucBtnExt_writeBMParm";
             this.ucBtnExt_writeBMParm.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
@@ -250,7 +287,7 @@
             this.ucTrackBar_disp12MaxDiff.IsShowTips = true;
             this.ucTrackBar_disp12MaxDiff.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucTrackBar_disp12MaxDiff.LineWidth = 5F;
-            this.ucTrackBar_disp12MaxDiff.Location = new System.Drawing.Point(112, 310);
+            this.ucTrackBar_disp12MaxDiff.Location = new System.Drawing.Point(112, 344);
             this.ucTrackBar_disp12MaxDiff.Margin = new System.Windows.Forms.Padding(2);
             this.ucTrackBar_disp12MaxDiff.MaxValue = 10F;
             this.ucTrackBar_disp12MaxDiff.MinValue = -1F;
@@ -267,7 +304,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(10, 286);
+            this.label19.Location = new System.Drawing.Point(10, 320);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(74, 19);
@@ -280,7 +317,7 @@
             this.ucTrackBar_speckleRange.IsShowTips = true;
             this.ucTrackBar_speckleRange.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucTrackBar_speckleRange.LineWidth = 5F;
-            this.ucTrackBar_speckleRange.Location = new System.Drawing.Point(112, 264);
+            this.ucTrackBar_speckleRange.Location = new System.Drawing.Point(112, 287);
             this.ucTrackBar_speckleRange.Margin = new System.Windows.Forms.Padding(2);
             this.ucTrackBar_speckleRange.MaxValue = 100F;
             this.ucTrackBar_speckleRange.MinValue = 0F;
@@ -299,7 +336,7 @@
             this.ucTrackBar_speckleWinSize.IsShowTips = true;
             this.ucTrackBar_speckleWinSize.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucTrackBar_speckleWinSize.LineWidth = 5F;
-            this.ucTrackBar_speckleWinSize.Location = new System.Drawing.Point(112, 242);
+            this.ucTrackBar_speckleWinSize.Location = new System.Drawing.Point(112, 265);
             this.ucTrackBar_speckleWinSize.Margin = new System.Windows.Forms.Padding(2);
             this.ucTrackBar_speckleWinSize.MaxValue = 100F;
             this.ucTrackBar_speckleWinSize.MinValue = 0F;
@@ -318,7 +355,7 @@
             this.ucTrackBar_textureThre.IsShowTips = true;
             this.ucTrackBar_textureThre.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucTrackBar_textureThre.LineWidth = 5F;
-            this.ucTrackBar_textureThre.Location = new System.Drawing.Point(112, 221);
+            this.ucTrackBar_textureThre.Location = new System.Drawing.Point(112, 244);
             this.ucTrackBar_textureThre.Margin = new System.Windows.Forms.Padding(2);
             this.ucTrackBar_textureThre.MaxValue = 1000F;
             this.ucTrackBar_textureThre.MinValue = 0F;
@@ -337,7 +374,7 @@
             this.ucTrackBar_uniquenessRatio.IsShowTips = true;
             this.ucTrackBar_uniquenessRatio.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucTrackBar_uniquenessRatio.LineWidth = 5F;
-            this.ucTrackBar_uniquenessRatio.Location = new System.Drawing.Point(112, 199);
+            this.ucTrackBar_uniquenessRatio.Location = new System.Drawing.Point(112, 222);
             this.ucTrackBar_uniquenessRatio.Margin = new System.Windows.Forms.Padding(2);
             this.ucTrackBar_uniquenessRatio.MaxValue = 20F;
             this.ucTrackBar_uniquenessRatio.MinValue = 0F;
@@ -354,7 +391,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(10, 175);
+            this.label18.Location = new System.Drawing.Point(10, 198);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(87, 19);
@@ -367,7 +404,7 @@
             this.ucTrackBar_numOfDis.IsShowTips = false;
             this.ucTrackBar_numOfDis.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucTrackBar_numOfDis.LineWidth = 5F;
-            this.ucTrackBar_numOfDis.Location = new System.Drawing.Point(112, 151);
+            this.ucTrackBar_numOfDis.Location = new System.Drawing.Point(112, 164);
             this.ucTrackBar_numOfDis.Margin = new System.Windows.Forms.Padding(2);
             this.ucTrackBar_numOfDis.MaxValue = 10F;
             this.ucTrackBar_numOfDis.MinValue = 0F;
@@ -386,7 +423,7 @@
             this.ucTrackBar_minDIsparity.IsShowTips = true;
             this.ucTrackBar_minDIsparity.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucTrackBar_minDIsparity.LineWidth = 5F;
-            this.ucTrackBar_minDIsparity.Location = new System.Drawing.Point(112, 130);
+            this.ucTrackBar_minDIsparity.Location = new System.Drawing.Point(112, 143);
             this.ucTrackBar_minDIsparity.Margin = new System.Windows.Forms.Padding(2);
             this.ucTrackBar_minDIsparity.MaxValue = 10F;
             this.ucTrackBar_minDIsparity.MinValue = -10F;
@@ -403,7 +440,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(10, 86);
+            this.label17.Location = new System.Drawing.Point(10, 99);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(75, 19);
@@ -492,7 +529,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(10, 19);
+            this.label12.Location = new System.Drawing.Point(10, 20);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(113, 19);
@@ -501,7 +538,7 @@
             // 
             // textBox_disp12MaxDiff
             // 
-            this.textBox_disp12MaxDiff.Location = new System.Drawing.Point(220, 306);
+            this.textBox_disp12MaxDiff.Location = new System.Drawing.Point(220, 340);
             this.textBox_disp12MaxDiff.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_disp12MaxDiff.Name = "textBox_disp12MaxDiff";
             this.textBox_disp12MaxDiff.ReadOnly = true;
@@ -511,7 +548,7 @@
             // 
             // textBox_speckleRange
             // 
-            this.textBox_speckleRange.Location = new System.Drawing.Point(220, 261);
+            this.textBox_speckleRange.Location = new System.Drawing.Point(220, 284);
             this.textBox_speckleRange.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_speckleRange.Name = "textBox_speckleRange";
             this.textBox_speckleRange.ReadOnly = true;
@@ -521,7 +558,7 @@
             // 
             // textBox_speckleWinSize
             // 
-            this.textBox_speckleWinSize.Location = new System.Drawing.Point(220, 239);
+            this.textBox_speckleWinSize.Location = new System.Drawing.Point(220, 262);
             this.textBox_speckleWinSize.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_speckleWinSize.Name = "textBox_speckleWinSize";
             this.textBox_speckleWinSize.ReadOnly = true;
@@ -531,7 +568,7 @@
             // 
             // textBox_textureThreshold
             // 
-            this.textBox_textureThreshold.Location = new System.Drawing.Point(220, 218);
+            this.textBox_textureThreshold.Location = new System.Drawing.Point(220, 241);
             this.textBox_textureThreshold.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_textureThreshold.Name = "textBox_textureThreshold";
             this.textBox_textureThreshold.ReadOnly = true;
@@ -541,7 +578,7 @@
             // 
             // textBox_SADWinSize
             // 
-            this.textBox_SADWinSize.Location = new System.Drawing.Point(220, 107);
+            this.textBox_SADWinSize.Location = new System.Drawing.Point(220, 120);
             this.textBox_SADWinSize.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_SADWinSize.Name = "textBox_SADWinSize";
             this.textBox_SADWinSize.ReadOnly = true;
@@ -551,7 +588,7 @@
             // 
             // textBox_numOfDis
             // 
-            this.textBox_numOfDis.Location = new System.Drawing.Point(220, 150);
+            this.textBox_numOfDis.Location = new System.Drawing.Point(220, 163);
             this.textBox_numOfDis.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_numOfDis.Name = "textBox_numOfDis";
             this.textBox_numOfDis.ReadOnly = true;
@@ -561,7 +598,7 @@
             // 
             // textBox_minDisparity
             // 
-            this.textBox_minDisparity.Location = new System.Drawing.Point(220, 129);
+            this.textBox_minDisparity.Location = new System.Drawing.Point(220, 142);
             this.textBox_minDisparity.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_minDisparity.Name = "textBox_minDisparity";
             this.textBox_minDisparity.ReadOnly = true;
@@ -575,7 +612,7 @@
             this.ucTrackBar_SADWinSize.IsShowTips = true;
             this.ucTrackBar_SADWinSize.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucTrackBar_SADWinSize.LineWidth = 5F;
-            this.ucTrackBar_SADWinSize.Location = new System.Drawing.Point(112, 108);
+            this.ucTrackBar_SADWinSize.Location = new System.Drawing.Point(112, 121);
             this.ucTrackBar_SADWinSize.Margin = new System.Windows.Forms.Padding(2);
             this.ucTrackBar_SADWinSize.MaxValue = 255F;
             this.ucTrackBar_SADWinSize.MinValue = 0F;
@@ -591,7 +628,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 310);
+            this.label8.Location = new System.Drawing.Point(10, 344);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 15);
@@ -601,7 +638,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 264);
+            this.label7.Location = new System.Drawing.Point(10, 287);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 15);
@@ -611,7 +648,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 242);
+            this.label6.Location = new System.Drawing.Point(10, 265);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 15);
@@ -621,7 +658,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 221);
+            this.label5.Location = new System.Drawing.Point(10, 244);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 15);
@@ -631,7 +668,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 110);
+            this.label4.Location = new System.Drawing.Point(10, 123);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 15);
@@ -641,7 +678,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 154);
+            this.label3.Location = new System.Drawing.Point(10, 167);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 15);
@@ -651,7 +688,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 132);
+            this.label2.Location = new System.Drawing.Point(10, 145);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 15);
@@ -660,7 +697,7 @@
             // 
             // textBox_uniquenessRatio
             // 
-            this.textBox_uniquenessRatio.Location = new System.Drawing.Point(220, 196);
+            this.textBox_uniquenessRatio.Location = new System.Drawing.Point(220, 219);
             this.textBox_uniquenessRatio.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_uniquenessRatio.Name = "textBox_uniquenessRatio";
             this.textBox_uniquenessRatio.ReadOnly = true;
@@ -671,7 +708,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 199);
+            this.label1.Location = new System.Drawing.Point(10, 222);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 15);
@@ -680,6 +717,32 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.ucBtnExt_sgbmparmDefauult);
+            this.tabPage2.Controls.Add(this.ucBtnExt_writeSgbmParm);
+            this.tabPage2.Controls.Add(this.numericUpDown_speckcleRange);
+            this.tabPage2.Controls.Add(this.numericUpDown_speckleWinSize);
+            this.tabPage2.Controls.Add(this.numericUpDown_disp12MaxDiff);
+            this.tabPage2.Controls.Add(this.numericUpDown_uniquenessRatio);
+            this.tabPage2.Controls.Add(this.numericUpDown_p2);
+            this.tabPage2.Controls.Add(this.numericUpDown_p1);
+            this.tabPage2.Controls.Add(this.numericUpDown_numOfDisparities);
+            this.tabPage2.Controls.Add(this.numericUpDown_minDisparity);
+            this.tabPage2.Controls.Add(this.numericUpDown_sadWinSize);
+            this.tabPage2.Controls.Add(this.label33);
+            this.tabPage2.Controls.Add(this.label32);
+            this.tabPage2.Controls.Add(this.label31);
+            this.tabPage2.Controls.Add(this.label30);
+            this.tabPage2.Controls.Add(this.label29);
+            this.tabPage2.Controls.Add(this.label28);
+            this.tabPage2.Controls.Add(this.label27);
+            this.tabPage2.Controls.Add(this.label26);
+            this.tabPage2.Controls.Add(this.label25);
+            this.tabPage2.Controls.Add(this.label24);
+            this.tabPage2.Controls.Add(this.label23);
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.numericUpDown_preFilterCap);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Font = new System.Drawing.Font("Times New Roman", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 54);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
@@ -689,6 +752,349 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "SGBM算法";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ucBtnExt_sgbmparmDefauult
+            // 
+            this.ucBtnExt_sgbmparmDefauult.BackColor = System.Drawing.Color.White;
+            this.ucBtnExt_sgbmparmDefauult.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnExt_sgbmparmDefauult.BtnFont = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucBtnExt_sgbmparmDefauult.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt_sgbmparmDefauult.BtnText = "默认参数";
+            this.ucBtnExt_sgbmparmDefauult.ConerRadius = 5;
+            this.ucBtnExt_sgbmparmDefauult.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt_sgbmparmDefauult.EnabledMouseEffect = true;
+            this.ucBtnExt_sgbmparmDefauult.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBtnExt_sgbmparmDefauult.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnExt_sgbmparmDefauult.IsRadius = true;
+            this.ucBtnExt_sgbmparmDefauult.IsShowRect = true;
+            this.ucBtnExt_sgbmparmDefauult.IsShowTips = false;
+            this.ucBtnExt_sgbmparmDefauult.Location = new System.Drawing.Point(19, 420);
+            this.ucBtnExt_sgbmparmDefauult.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnExt_sgbmparmDefauult.Name = "ucBtnExt_sgbmparmDefauult";
+            this.ucBtnExt_sgbmparmDefauult.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt_sgbmparmDefauult.RectWidth = 1;
+            this.ucBtnExt_sgbmparmDefauult.Size = new System.Drawing.Size(62, 20);
+            this.ucBtnExt_sgbmparmDefauult.TabIndex = 51;
+            this.ucBtnExt_sgbmparmDefauult.TabStop = false;
+            this.ucBtnExt_sgbmparmDefauult.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnExt_sgbmparmDefauult.TipsText = "";
+            this.ucBtnExt_sgbmparmDefauult.BtnClick += new System.EventHandler(this.ucBtnExt_sgbmparmDefauult_BtnClick);
+            // 
+            // ucBtnExt_writeSgbmParm
+            // 
+            this.ucBtnExt_writeSgbmParm.BackColor = System.Drawing.Color.White;
+            this.ucBtnExt_writeSgbmParm.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnExt_writeSgbmParm.BtnFont = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucBtnExt_writeSgbmParm.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt_writeSgbmParm.BtnText = "写入参数";
+            this.ucBtnExt_writeSgbmParm.ConerRadius = 5;
+            this.ucBtnExt_writeSgbmParm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt_writeSgbmParm.EnabledMouseEffect = true;
+            this.ucBtnExt_writeSgbmParm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBtnExt_writeSgbmParm.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnExt_writeSgbmParm.IsRadius = true;
+            this.ucBtnExt_writeSgbmParm.IsShowRect = true;
+            this.ucBtnExt_writeSgbmParm.IsShowTips = false;
+            this.ucBtnExt_writeSgbmParm.Location = new System.Drawing.Point(90, 420);
+            this.ucBtnExt_writeSgbmParm.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnExt_writeSgbmParm.Name = "ucBtnExt_writeSgbmParm";
+            this.ucBtnExt_writeSgbmParm.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt_writeSgbmParm.RectWidth = 1;
+            this.ucBtnExt_writeSgbmParm.Size = new System.Drawing.Size(62, 20);
+            this.ucBtnExt_writeSgbmParm.TabIndex = 50;
+            this.ucBtnExt_writeSgbmParm.TabStop = false;
+            this.ucBtnExt_writeSgbmParm.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnExt_writeSgbmParm.TipsText = "";
+            this.ucBtnExt_writeSgbmParm.BtnClick += new System.EventHandler(this.ucBtnExt_writeSgbmParm_BtnClick);
+            // 
+            // numericUpDown_speckcleRange
+            // 
+            this.numericUpDown_speckcleRange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown_speckcleRange.Location = new System.Drawing.Point(140, 384);
+            this.numericUpDown_speckcleRange.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown_speckcleRange.Name = "numericUpDown_speckcleRange";
+            this.numericUpDown_speckcleRange.Size = new System.Drawing.Size(47, 21);
+            this.numericUpDown_speckcleRange.TabIndex = 49;
+            this.numericUpDown_speckcleRange.ValueChanged += new System.EventHandler(this.numericUpDown_speckcleRange_ValueChanged);
+            // 
+            // numericUpDown_speckleWinSize
+            // 
+            this.numericUpDown_speckleWinSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown_speckleWinSize.Location = new System.Drawing.Point(140, 357);
+            this.numericUpDown_speckleWinSize.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown_speckleWinSize.Name = "numericUpDown_speckleWinSize";
+            this.numericUpDown_speckleWinSize.Size = new System.Drawing.Size(47, 21);
+            this.numericUpDown_speckleWinSize.TabIndex = 48;
+            this.numericUpDown_speckleWinSize.ValueChanged += new System.EventHandler(this.numericUpDown_speckleWinSize_ValueChanged);
+            // 
+            // numericUpDown_disp12MaxDiff
+            // 
+            this.numericUpDown_disp12MaxDiff.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown_disp12MaxDiff.Location = new System.Drawing.Point(140, 330);
+            this.numericUpDown_disp12MaxDiff.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numericUpDown_disp12MaxDiff.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown_disp12MaxDiff.Name = "numericUpDown_disp12MaxDiff";
+            this.numericUpDown_disp12MaxDiff.Size = new System.Drawing.Size(47, 21);
+            this.numericUpDown_disp12MaxDiff.TabIndex = 47;
+            this.numericUpDown_disp12MaxDiff.ValueChanged += new System.EventHandler(this.numericUpDown_disp12MaxDiff_ValueChanged);
+            // 
+            // numericUpDown_uniquenessRatio
+            // 
+            this.numericUpDown_uniquenessRatio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown_uniquenessRatio.Location = new System.Drawing.Point(140, 303);
+            this.numericUpDown_uniquenessRatio.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numericUpDown_uniquenessRatio.Name = "numericUpDown_uniquenessRatio";
+            this.numericUpDown_uniquenessRatio.Size = new System.Drawing.Size(47, 21);
+            this.numericUpDown_uniquenessRatio.TabIndex = 46;
+            this.numericUpDown_uniquenessRatio.ValueChanged += new System.EventHandler(this.numericUpDown_uniquenessRatio_ValueChanged);
+            // 
+            // numericUpDown_p2
+            // 
+            this.numericUpDown_p2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown_p2.Location = new System.Drawing.Point(140, 245);
+            this.numericUpDown_p2.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.numericUpDown_p2.Name = "numericUpDown_p2";
+            this.numericUpDown_p2.Size = new System.Drawing.Size(47, 21);
+            this.numericUpDown_p2.TabIndex = 45;
+            this.numericUpDown_p2.ValueChanged += new System.EventHandler(this.numericUpDown_p2_ValueChanged);
+            // 
+            // numericUpDown_p1
+            // 
+            this.numericUpDown_p1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown_p1.Location = new System.Drawing.Point(140, 218);
+            this.numericUpDown_p1.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.numericUpDown_p1.Name = "numericUpDown_p1";
+            this.numericUpDown_p1.Size = new System.Drawing.Size(47, 21);
+            this.numericUpDown_p1.TabIndex = 44;
+            this.numericUpDown_p1.ValueChanged += new System.EventHandler(this.numericUpDown_p1_ValueChanged);
+            // 
+            // numericUpDown_numOfDisparities
+            // 
+            this.numericUpDown_numOfDisparities.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown_numOfDisparities.Increment = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            this.numericUpDown_numOfDisparities.Location = new System.Drawing.Point(140, 160);
+            this.numericUpDown_numOfDisparities.Maximum = new decimal(new int[] {
+            640,
+            0,
+            0,
+            0});
+            this.numericUpDown_numOfDisparities.Name = "numericUpDown_numOfDisparities";
+            this.numericUpDown_numOfDisparities.Size = new System.Drawing.Size(47, 21);
+            this.numericUpDown_numOfDisparities.TabIndex = 43;
+            this.numericUpDown_numOfDisparities.ValueChanged += new System.EventHandler(this.numericUpDown_numOfDisparities_ValueChanged);
+            // 
+            // numericUpDown_minDisparity
+            // 
+            this.numericUpDown_minDisparity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown_minDisparity.Location = new System.Drawing.Point(140, 133);
+            this.numericUpDown_minDisparity.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numericUpDown_minDisparity.Name = "numericUpDown_minDisparity";
+            this.numericUpDown_minDisparity.Size = new System.Drawing.Size(47, 21);
+            this.numericUpDown_minDisparity.TabIndex = 42;
+            this.numericUpDown_minDisparity.ValueChanged += new System.EventHandler(this.numericUpDown_minDisparity_ValueChanged);
+            // 
+            // numericUpDown_sadWinSize
+            // 
+            this.numericUpDown_sadWinSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown_sadWinSize.Location = new System.Drawing.Point(140, 106);
+            this.numericUpDown_sadWinSize.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numericUpDown_sadWinSize.Name = "numericUpDown_sadWinSize";
+            this.numericUpDown_sadWinSize.Size = new System.Drawing.Size(47, 21);
+            this.numericUpDown_sadWinSize.TabIndex = 41;
+            this.numericUpDown_sadWinSize.ValueChanged += new System.EventHandler(this.numericUpDown_sadWinSize_ValueChanged);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(10, 387);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(84, 15);
+            this.label33.TabIndex = 40;
+            this.label33.Text = "speckleRange:";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(10, 360);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(116, 15);
+            this.label32.TabIndex = 39;
+            this.label32.Text = "speckleWindowSize:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(10, 333);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(88, 15);
+            this.label31.TabIndex = 38;
+            this.label31.Text = "disp12MaxDiff:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(10, 306);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(100, 15);
+            this.label30.TabIndex = 37;
+            this.label30.Text = "uniquenessRatio:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label29.Location = new System.Drawing.Point(10, 275);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(87, 19);
+            this.label29.TabIndex = 36;
+            this.label29.Text = "后处理参数：";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(10, 248);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(23, 15);
+            this.label28.TabIndex = 35;
+            this.label28.Text = "P2:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label27.Location = new System.Drawing.Point(10, 190);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(100, 19);
+            this.label27.TabIndex = 34;
+            this.label27.Text = "动态规划参数：";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(10, 221);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(23, 15);
+            this.label26.TabIndex = 33;
+            this.label26.Text = "P1:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(10, 163);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(120, 15);
+            this.label25.TabIndex = 32;
+            this.label25.Text = "numberOfDisparities:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(10, 136);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(78, 15);
+            this.label24.TabIndex = 31;
+            this.label24.Text = "minDisparity:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(10, 109);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(102, 15);
+            this.label23.TabIndex = 30;
+            this.label23.Text = "SADWindowSize:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label22.Location = new System.Drawing.Point(10, 78);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(74, 19);
+            this.label22.TabIndex = 29;
+            this.label22.Text = "代价参数：";
+            // 
+            // numericUpDown_preFilterCap
+            // 
+            this.numericUpDown_preFilterCap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown_preFilterCap.Location = new System.Drawing.Point(140, 48);
+            this.numericUpDown_preFilterCap.Name = "numericUpDown_preFilterCap";
+            this.numericUpDown_preFilterCap.Size = new System.Drawing.Size(47, 21);
+            this.numericUpDown_preFilterCap.TabIndex = 28;
+            this.numericUpDown_preFilterCap.ValueChanged += new System.EventHandler(this.numericUpDown_preFilterCap_ValueChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(10, 51);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(75, 15);
+            this.label21.TabIndex = 27;
+            this.label21.Text = "preFilterCap:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label20.Location = new System.Drawing.Point(10, 20);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(113, 19);
+            this.label20.TabIndex = 26;
+            this.label20.Text = "预处理滤波参数：";
             // 
             // ucPanelQuote1
             // 
@@ -715,11 +1121,38 @@
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(441, 14);
+            this.panel2.Location = new System.Drawing.Point(441, 3);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(148, 101);
+            this.panel2.Size = new System.Drawing.Size(148, 115);
             this.panel2.TabIndex = 13;
+            // 
+            // textBox_zpos
+            // 
+            this.textBox_zpos.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox_zpos.Location = new System.Drawing.Point(51, 81);
+            this.textBox_zpos.Name = "textBox_zpos";
+            this.textBox_zpos.ReadOnly = true;
+            this.textBox_zpos.Size = new System.Drawing.Size(88, 21);
+            this.textBox_zpos.TabIndex = 14;
+            // 
+            // textBox_ypos
+            // 
+            this.textBox_ypos.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox_ypos.Location = new System.Drawing.Point(51, 59);
+            this.textBox_ypos.Name = "textBox_ypos";
+            this.textBox_ypos.ReadOnly = true;
+            this.textBox_ypos.Size = new System.Drawing.Size(88, 21);
+            this.textBox_ypos.TabIndex = 13;
+            // 
+            // textBox_xpos
+            // 
+            this.textBox_xpos.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox_xpos.Location = new System.Drawing.Point(51, 37);
+            this.textBox_xpos.Name = "textBox_xpos";
+            this.textBox_xpos.ReadOnly = true;
+            this.textBox_xpos.Size = new System.Drawing.Size(88, 21);
+            this.textBox_xpos.TabIndex = 1;
             // 
             // label13
             // 
@@ -736,7 +1169,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(20, 71);
+            this.label11.Location = new System.Drawing.Point(20, 82);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(27, 19);
@@ -747,7 +1180,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(20, 49);
+            this.label10.Location = new System.Drawing.Point(20, 60);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(27, 19);
@@ -758,7 +1191,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(20, 26);
+            this.label9.Location = new System.Drawing.Point(20, 37);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(27, 19);
@@ -769,18 +1202,18 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(599, 16);
+            this.label14.Location = new System.Drawing.Point(599, 3);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(357, 95);
+            this.label14.Size = new System.Drawing.Size(357, 114);
             this.label14.TabIndex = 16;
             this.label14.Text = "说明：\r\n1. 鼠标点击进行测距\r\n2. [切换画面]可以在视差图与左相机原图之间切换显示\r\n3. 坐标值单位为mm，坐标系原点位于左相机光心\r\n4. BM算法用" +
-    "于实时深度计算，SGBM算法用于图片深度计算";
+    "于实时深度计算，SGBM算法用于图片深度计算\r\n5. 坐标值为红色表示当前像素点空间坐标无法测量";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.ucBtnExt3);
             this.groupBox3.Controls.Add(this.ucBtnExt_sgbmrefresh);
+            this.groupBox3.Controls.Add(this.ucBtnExt_sgbmclose);
             this.groupBox3.Controls.Add(this.ucBtnExt_sgbmChangeImg);
             this.groupBox3.Controls.Add(this.ucBtnExt_sgbmDisCal);
             this.groupBox3.Controls.Add(this.ucBtnExt_sgbmLoadImg);
@@ -793,57 +1226,32 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "SGBM";
             // 
-            // ucBtnExt3
+            // ucBtnExt_sgbmclose
             // 
-            this.ucBtnExt3.BackColor = System.Drawing.Color.White;
-            this.ucBtnExt3.BtnBackColor = System.Drawing.Color.White;
-            this.ucBtnExt3.BtnFont = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ucBtnExt3.BtnForeColor = System.Drawing.Color.White;
-            this.ucBtnExt3.BtnText = "开始测量";
-            this.ucBtnExt3.ConerRadius = 5;
-            this.ucBtnExt3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ucBtnExt3.EnabledMouseEffect = true;
-            this.ucBtnExt3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucBtnExt3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucBtnExt3.IsRadius = true;
-            this.ucBtnExt3.IsShowRect = true;
-            this.ucBtnExt3.IsShowTips = false;
-            this.ucBtnExt3.Location = new System.Drawing.Point(274, 17);
-            this.ucBtnExt3.Margin = new System.Windows.Forms.Padding(0);
-            this.ucBtnExt3.Name = "ucBtnExt3";
-            this.ucBtnExt3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
-            this.ucBtnExt3.RectWidth = 1;
-            this.ucBtnExt3.Size = new System.Drawing.Size(69, 26);
-            this.ucBtnExt3.TabIndex = 3;
-            this.ucBtnExt3.TabStop = false;
-            this.ucBtnExt3.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-            this.ucBtnExt3.TipsText = "";
-            // 
-            // ucBtnExt_sgbmrefresh
-            // 
-            this.ucBtnExt_sgbmrefresh.BackColor = System.Drawing.Color.White;
-            this.ucBtnExt_sgbmrefresh.BtnBackColor = System.Drawing.Color.White;
-            this.ucBtnExt_sgbmrefresh.BtnFont = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ucBtnExt_sgbmrefresh.BtnForeColor = System.Drawing.Color.White;
-            this.ucBtnExt_sgbmrefresh.BtnText = "刷新";
-            this.ucBtnExt_sgbmrefresh.ConerRadius = 5;
-            this.ucBtnExt_sgbmrefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ucBtnExt_sgbmrefresh.EnabledMouseEffect = true;
-            this.ucBtnExt_sgbmrefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucBtnExt_sgbmrefresh.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucBtnExt_sgbmrefresh.IsRadius = true;
-            this.ucBtnExt_sgbmrefresh.IsShowRect = true;
-            this.ucBtnExt_sgbmrefresh.IsShowTips = false;
-            this.ucBtnExt_sgbmrefresh.Location = new System.Drawing.Point(224, 17);
-            this.ucBtnExt_sgbmrefresh.Margin = new System.Windows.Forms.Padding(0);
-            this.ucBtnExt_sgbmrefresh.Name = "ucBtnExt_sgbmrefresh";
-            this.ucBtnExt_sgbmrefresh.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
-            this.ucBtnExt_sgbmrefresh.RectWidth = 1;
-            this.ucBtnExt_sgbmrefresh.Size = new System.Drawing.Size(45, 26);
-            this.ucBtnExt_sgbmrefresh.TabIndex = 3;
-            this.ucBtnExt_sgbmrefresh.TabStop = false;
-            this.ucBtnExt_sgbmrefresh.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-            this.ucBtnExt_sgbmrefresh.TipsText = "";
+            this.ucBtnExt_sgbmclose.BackColor = System.Drawing.Color.White;
+            this.ucBtnExt_sgbmclose.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnExt_sgbmclose.BtnFont = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucBtnExt_sgbmclose.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt_sgbmclose.BtnText = "Close";
+            this.ucBtnExt_sgbmclose.ConerRadius = 5;
+            this.ucBtnExt_sgbmclose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt_sgbmclose.EnabledMouseEffect = true;
+            this.ucBtnExt_sgbmclose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBtnExt_sgbmclose.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnExt_sgbmclose.IsRadius = true;
+            this.ucBtnExt_sgbmclose.IsShowRect = true;
+            this.ucBtnExt_sgbmclose.IsShowTips = false;
+            this.ucBtnExt_sgbmclose.Location = new System.Drawing.Point(294, 17);
+            this.ucBtnExt_sgbmclose.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnExt_sgbmclose.Name = "ucBtnExt_sgbmclose";
+            this.ucBtnExt_sgbmclose.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt_sgbmclose.RectWidth = 1;
+            this.ucBtnExt_sgbmclose.Size = new System.Drawing.Size(45, 26);
+            this.ucBtnExt_sgbmclose.TabIndex = 3;
+            this.ucBtnExt_sgbmclose.TabStop = false;
+            this.ucBtnExt_sgbmclose.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnExt_sgbmclose.TipsText = "";
+            this.ucBtnExt_sgbmclose.BtnClick += new System.EventHandler(this.ucBtnExt_sgbmclose_BtnClick);
             // 
             // ucBtnExt_sgbmChangeImg
             // 
@@ -860,7 +1268,7 @@
             this.ucBtnExt_sgbmChangeImg.IsRadius = true;
             this.ucBtnExt_sgbmChangeImg.IsShowRect = true;
             this.ucBtnExt_sgbmChangeImg.IsShowTips = false;
-            this.ucBtnExt_sgbmChangeImg.Location = new System.Drawing.Point(152, 17);
+            this.ucBtnExt_sgbmChangeImg.Location = new System.Drawing.Point(162, 17);
             this.ucBtnExt_sgbmChangeImg.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt_sgbmChangeImg.Name = "ucBtnExt_sgbmChangeImg";
             this.ucBtnExt_sgbmChangeImg.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
@@ -870,6 +1278,7 @@
             this.ucBtnExt_sgbmChangeImg.TabStop = false;
             this.ucBtnExt_sgbmChangeImg.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucBtnExt_sgbmChangeImg.TipsText = "";
+            this.ucBtnExt_sgbmChangeImg.BtnClick += new System.EventHandler(this.ucBtnExt_sgbmChangeImg_BtnClick);
             // 
             // ucBtnExt_sgbmDisCal
             // 
@@ -886,7 +1295,7 @@
             this.ucBtnExt_sgbmDisCal.IsRadius = true;
             this.ucBtnExt_sgbmDisCal.IsShowRect = true;
             this.ucBtnExt_sgbmDisCal.IsShowTips = false;
-            this.ucBtnExt_sgbmDisCal.Location = new System.Drawing.Point(80, 17);
+            this.ucBtnExt_sgbmDisCal.Location = new System.Drawing.Point(85, 17);
             this.ucBtnExt_sgbmDisCal.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt_sgbmDisCal.Name = "ucBtnExt_sgbmDisCal";
             this.ucBtnExt_sgbmDisCal.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
@@ -896,6 +1305,7 @@
             this.ucBtnExt_sgbmDisCal.TabStop = false;
             this.ucBtnExt_sgbmDisCal.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucBtnExt_sgbmDisCal.TipsText = "";
+            this.ucBtnExt_sgbmDisCal.BtnClick += new System.EventHandler(this.ucBtnExt_sgbmDisCal_BtnClick);
             // 
             // ucBtnExt_sgbmLoadImg
             // 
@@ -926,7 +1336,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.ucBtnExt1);
+            this.groupBox2.Controls.Add(this.ucBtnExt_bmClose);
             this.groupBox2.Controls.Add(this.ucBtnExt_restart);
             this.groupBox2.Controls.Add(this.ucBtnExt_pause);
             this.groupBox2.Controls.Add(this.ucBtnExt_bmImg);
@@ -940,6 +1350,33 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "BM";
+            // 
+            // ucBtnExt_bmClose
+            // 
+            this.ucBtnExt_bmClose.BackColor = System.Drawing.Color.White;
+            this.ucBtnExt_bmClose.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnExt_bmClose.BtnFont = new System.Drawing.Font("Times New Roman", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucBtnExt_bmClose.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt_bmClose.BtnText = "Close";
+            this.ucBtnExt_bmClose.ConerRadius = 5;
+            this.ucBtnExt_bmClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt_bmClose.EnabledMouseEffect = true;
+            this.ucBtnExt_bmClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBtnExt_bmClose.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnExt_bmClose.IsRadius = true;
+            this.ucBtnExt_bmClose.IsShowRect = true;
+            this.ucBtnExt_bmClose.IsShowTips = false;
+            this.ucBtnExt_bmClose.Location = new System.Drawing.Point(369, 16);
+            this.ucBtnExt_bmClose.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnExt_bmClose.Name = "ucBtnExt_bmClose";
+            this.ucBtnExt_bmClose.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt_bmClose.RectWidth = 1;
+            this.ucBtnExt_bmClose.Size = new System.Drawing.Size(47, 26);
+            this.ucBtnExt_bmClose.TabIndex = 5;
+            this.ucBtnExt_bmClose.TabStop = false;
+            this.ucBtnExt_bmClose.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnExt_bmClose.TipsText = "";
+            this.ucBtnExt_bmClose.BtnClick += new System.EventHandler(this.ucBtnExt_bmClose_BtnClick);
             // 
             // ucBtnExt_restart
             // 
@@ -1081,58 +1518,32 @@
             this.timer_disparityMeasure.Interval = 50;
             this.timer_disparityMeasure.Tick += new System.EventHandler(this.timer_disparityMeasure_Tick);
             // 
-            // textBox_xpos
+            // ucBtnExt_sgbmrefresh
             // 
-            this.textBox_xpos.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox_xpos.Location = new System.Drawing.Point(51, 26);
-            this.textBox_xpos.Name = "textBox_xpos";
-            this.textBox_xpos.ReadOnly = true;
-            this.textBox_xpos.Size = new System.Drawing.Size(88, 21);
-            this.textBox_xpos.TabIndex = 1;
-            // 
-            // textBox_ypos
-            // 
-            this.textBox_ypos.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox_ypos.Location = new System.Drawing.Point(51, 48);
-            this.textBox_ypos.Name = "textBox_ypos";
-            this.textBox_ypos.ReadOnly = true;
-            this.textBox_ypos.Size = new System.Drawing.Size(88, 21);
-            this.textBox_ypos.TabIndex = 13;
-            // 
-            // textBox_zpos
-            // 
-            this.textBox_zpos.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox_zpos.Location = new System.Drawing.Point(51, 70);
-            this.textBox_zpos.Name = "textBox_zpos";
-            this.textBox_zpos.ReadOnly = true;
-            this.textBox_zpos.Size = new System.Drawing.Size(88, 21);
-            this.textBox_zpos.TabIndex = 14;
-            // 
-            // ucBtnExt1
-            // 
-            this.ucBtnExt1.BackColor = System.Drawing.Color.White;
-            this.ucBtnExt1.BtnBackColor = System.Drawing.Color.White;
-            this.ucBtnExt1.BtnFont = new System.Drawing.Font("Times New Roman", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucBtnExt1.BtnForeColor = System.Drawing.Color.White;
-            this.ucBtnExt1.BtnText = "Close";
-            this.ucBtnExt1.ConerRadius = 5;
-            this.ucBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ucBtnExt1.EnabledMouseEffect = true;
-            this.ucBtnExt1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucBtnExt1.IsRadius = true;
-            this.ucBtnExt1.IsShowRect = true;
-            this.ucBtnExt1.IsShowTips = false;
-            this.ucBtnExt1.Location = new System.Drawing.Point(369, 16);
-            this.ucBtnExt1.Margin = new System.Windows.Forms.Padding(0);
-            this.ucBtnExt1.Name = "ucBtnExt1";
-            this.ucBtnExt1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
-            this.ucBtnExt1.RectWidth = 1;
-            this.ucBtnExt1.Size = new System.Drawing.Size(47, 26);
-            this.ucBtnExt1.TabIndex = 5;
-            this.ucBtnExt1.TabStop = false;
-            this.ucBtnExt1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-            this.ucBtnExt1.TipsText = "";
+            this.ucBtnExt_sgbmrefresh.BackColor = System.Drawing.Color.White;
+            this.ucBtnExt_sgbmrefresh.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnExt_sgbmrefresh.BtnFont = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucBtnExt_sgbmrefresh.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt_sgbmrefresh.BtnText = "刷新";
+            this.ucBtnExt_sgbmrefresh.ConerRadius = 5;
+            this.ucBtnExt_sgbmrefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt_sgbmrefresh.EnabledMouseEffect = true;
+            this.ucBtnExt_sgbmrefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBtnExt_sgbmrefresh.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnExt_sgbmrefresh.IsRadius = true;
+            this.ucBtnExt_sgbmrefresh.IsShowRect = true;
+            this.ucBtnExt_sgbmrefresh.IsShowTips = false;
+            this.ucBtnExt_sgbmrefresh.Location = new System.Drawing.Point(239, 17);
+            this.ucBtnExt_sgbmrefresh.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnExt_sgbmrefresh.Name = "ucBtnExt_sgbmrefresh";
+            this.ucBtnExt_sgbmrefresh.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt_sgbmrefresh.RectWidth = 1;
+            this.ucBtnExt_sgbmrefresh.Size = new System.Drawing.Size(45, 26);
+            this.ucBtnExt_sgbmrefresh.TabIndex = 4;
+            this.ucBtnExt_sgbmrefresh.TabStop = false;
+            this.ucBtnExt_sgbmrefresh.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnExt_sgbmrefresh.TipsText = "";
+            this.ucBtnExt_sgbmrefresh.BtnClick += new System.EventHandler(this.ucBtnExt_sgbmrefresh_BtnClick);
             // 
             // DisparityMeasure
             // 
@@ -1153,6 +1564,18 @@
             this.tabControlExt1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_speckcleRange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_speckleWinSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_disp12MaxDiff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_uniquenessRatio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_p2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_p1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_numOfDisparities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_minDisparity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_sadWinSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_preFilterCap)).EndInit();
             this.ucPanelQuote1.ResumeLayout(false);
             this.ucPanelQuote1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1198,13 +1621,12 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox3;
-        private HZH_Controls.Controls.UCBtnExt ucBtnExt_sgbmrefresh;
+        private HZH_Controls.Controls.UCBtnExt ucBtnExt_sgbmclose;
         private HZH_Controls.Controls.UCBtnExt ucBtnExt_sgbmChangeImg;
         private HZH_Controls.Controls.UCBtnExt ucBtnExt_sgbmDisCal;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label14;
         private HZH_Controls.Controls.UCBtnExt ucBtnExt_bmImg;
-        private HZH_Controls.Controls.UCBtnExt ucBtnExt3;
         private HZH_Controls.Controls.UCBtnExt ucBtnExt_pause;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -1229,6 +1651,33 @@
         private System.Windows.Forms.TextBox textBox_zpos;
         private System.Windows.Forms.TextBox textBox_ypos;
         private System.Windows.Forms.TextBox textBox_xpos;
-        private HZH_Controls.Controls.UCBtnExt ucBtnExt1;
+        private HZH_Controls.Controls.UCBtnExt ucBtnExt_bmClose;
+        private System.Windows.Forms.NumericUpDown numericUpDown_preFilterCap;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private HZH_Controls.Controls.UCBtnExt ucBtnExt_sgbmparmDefauult;
+        private HZH_Controls.Controls.UCBtnExt ucBtnExt_writeSgbmParm;
+        private System.Windows.Forms.NumericUpDown numericUpDown_speckcleRange;
+        private System.Windows.Forms.NumericUpDown numericUpDown_speckleWinSize;
+        private System.Windows.Forms.NumericUpDown numericUpDown_disp12MaxDiff;
+        private System.Windows.Forms.NumericUpDown numericUpDown_uniquenessRatio;
+        private System.Windows.Forms.NumericUpDown numericUpDown_p2;
+        private System.Windows.Forms.NumericUpDown numericUpDown_p1;
+        private System.Windows.Forms.NumericUpDown numericUpDown_numOfDisparities;
+        private System.Windows.Forms.NumericUpDown numericUpDown_minDisparity;
+        private System.Windows.Forms.NumericUpDown numericUpDown_sadWinSize;
+        private HZH_Controls.Controls.UCBtnExt ucBtnExt_sgbmrefresh;
     }
 }

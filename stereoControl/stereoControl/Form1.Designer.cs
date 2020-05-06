@@ -138,6 +138,7 @@
             this.图像处理ToolStripMenuItem.Name = "图像处理ToolStripMenuItem";
             this.图像处理ToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
             this.图像处理ToolStripMenuItem.Text = "图像处理";
+            this.图像处理ToolStripMenuItem.Click += new System.EventHandler(this.图像处理ToolStripMenuItem_Click);
             // 
             // 立体测量ToolStripMenuItem
             // 

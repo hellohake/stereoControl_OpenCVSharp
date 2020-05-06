@@ -35,6 +35,7 @@ namespace stereoControl
         private LogView logWin;
         private Settings settingWin;
         private DisparityMeasure stereoMeasureWin;
+        private ImageProcess imgProcessWin;
         //存储文件路径信息
         private DirectoryInfo rootDir;
         private string camParmyaml;
@@ -65,11 +66,11 @@ namespace stereoControl
         {
             if (!cap.IsOpened())
             {
-                if (FrmDialog.ShowDialog(this, "双目相机连接失败", "Error") == DialogResult.OK)
-                {
-                    //执行连接失败处理
-                    return;
-                }
+                //if (FrmDialog.ShowDialog(this, "双目相机连接失败", "Error") == DialogResult.OK)
+                //{
+                //    //执行连接失败处理
+                //    return;
+                //}
             }
             if (IS_DOUBLECAM_OPEN)          //摄像头打开
             {
@@ -316,6 +317,11 @@ namespace stereoControl
             }
         }
         //读入相机标定数据
+        /// <summary>
+        /// 待修改！！！！！！！！！！
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ucBtnExt_readCamParm_BtnClick(object sender, EventArgs e)
         {
             rootDir = Directory.GetParent(Environment.CurrentDirectory);    //定位bin目录
@@ -412,7 +418,12 @@ namespace stereoControl
             stereoMeasureWin = GenericSingleton<DisparityMeasure>.CreateInstance();
             stereoMeasureWin.Show();
         }
-
-       
+        //打开图像处理对话框
+        private void 图像处理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            imgProcessWin = GenericSingleton<ImageProcess>.CreateInstance();
+            imgProcessWin.Show();
+            ShareData.Log = "[msg] 图像处理对话框已打开";
+        }
     }
 }

@@ -79,6 +79,19 @@ namespace stereoControl
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-        }       
+        }
+        //textBox_leftImg文本框自动定位至末端
+        private void textBox_leftImg_TextChanged(object sender, EventArgs e)
+        {
+            this.textBox_leftImg.Select(this.textBox_leftImg.TextLength, 0);
+            this.textBox_leftImg.ScrollToCaret();
+
+        }
+        //textBox_rightImg文本框自动定位至末端
+        private void textBox_rightImg_TextChanged(object sender, EventArgs e)
+        {
+            this.textBox_rightImg.Select(this.textBox_rightImg.TextLength, 0);
+            this.textBox_rightImg.ScrollToCaret();
+        }
     }
 }
