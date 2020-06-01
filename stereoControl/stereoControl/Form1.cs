@@ -104,7 +104,7 @@ namespace stereoControl
                                  new Scalar(0, 0, 255));
                     }
                 }
-                //备份
+                //备份校正图像
                 ShareData.LeftImg = leftImg;
                 ShareData.RightImg = rightImg;
                 //显示图像
@@ -317,11 +317,6 @@ namespace stereoControl
             }
         }
         //读入相机标定数据
-        /// <summary>
-        /// 待修改！！！！！！！！！！
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void ucBtnExt_readCamParm_BtnClick(object sender, EventArgs e)
         {
             rootDir = Directory.GetParent(Environment.CurrentDirectory);    //定位bin目录
@@ -424,6 +419,26 @@ namespace stereoControl
             imgProcessWin = GenericSingleton<ImageProcess>.CreateInstance();
             imgProcessWin.Show();
             ShareData.Log = "[msg] 图像处理对话框已打开";
+        }
+        //显示一下图片供毕设用
+        private void ucBtnExt1_BtnClick(object sender, EventArgs e)
+        {
+            Mat ttleft = Cv2.ImRead("E:/Git_Repository/stereoControl_OpenCVSharp/拍摄图片/newTest_B_80mm/888_left.jpg", ImreadModes.Color);
+            Mat ttright = Cv2.ImRead("E:/Git_Repository/stereoControl_OpenCVSharp/拍摄图片/newTest_B_80mm/888_right.jpg", ImreadModes.Color);
+            Mat ttleftRectify = new Mat();
+            Mat ttrightRectify = new Mat();
+            Cv2.Remap(ttleft, ttleftRectify, ShareData.leftMap1, ShareData.leftMap2, InterpolationFlags.Linear);
+            Cv2.Remap(ttright, ttrightRectify, ShareData.rightMap1, ShareData.rightMap2, InterpolationFlags.Linear);
+
+            for(int i = 20; i < 480; i += 30)
+            {
+                Cv2.Line(ttleftRectify, new OpenCvSharp.Point(0, i), new OpenCvSharp.Point(640, i), new Scalar(0, 0, 255), 1);
+                Cv2.Line(ttrightRectify, new OpenCvSharp.Point(0, i), new OpenCvSharp.Point(640, i), new Scalar(0, 0, 255), 1);
+            }
+
+            this.pictureBoxIpl_left.ImageIpl = ttleftRectify;
+            this.pictureBoxIpl_right.ImageIpl = ttrightRectify;
+
         }
     }
 }

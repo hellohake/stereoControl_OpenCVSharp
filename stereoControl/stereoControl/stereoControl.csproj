@@ -83,6 +83,12 @@
     <Compile Include="ImageProcess.Designer.cs">
       <DependentUpon>ImageProcess.cs</DependentUpon>
     </Compile>
+    <Compile Include="loadimage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loadimage.Designer.cs">
+      <DependentUpon>loadimage.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImageProcess.resx">
       <DependentUpon>ImageProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loadimage.resx">
+      <DependentUpon>loadimage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogView.resx">
       <DependentUpon>LogView.cs</DependentUpon>

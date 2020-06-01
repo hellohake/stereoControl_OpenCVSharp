@@ -43,13 +43,15 @@ namespace stereoControl
         private bool IS_ALLOWED_MEASURE = false;
         private bool IS_IMG_SHOW_PAUSE = false;
 
+        private bool IS_CAL_PIC_BM = false;     //是否使用BM算法计算静态视差图
+
         //BM算法参数值--参考OpenCV源文档
         private int bm_preFilterSize    = 15;   //5--21，必须奇数
         private int bm_preFilterCap     = 31;   //1--31
         private int bm_SADWinSize       = 15;   //5--21，必须为奇数      
         private int bm_minDisparity     = 0;    //可以为负
-        private int bm_numOfDisparities = 64;   //必须为16倍数：16、32、48、64、80.....
-        private int bm_uniquenessRatio  = 15;   //5--15,不能为负
+        private int bm_numOfDisparities = 112;   //必须为16倍数：16、32、48、64、80.....
+        private int bm_uniquenessRatio  = 5;   //5--15,不能为负
         private int bm_textureThreshold = 10;   //不能为负
         private int bm_speckleWinSize   = 100;  //取0则取消检查
         private int bm_speckleRange     = 32;   //视差清0阈值
@@ -59,6 +61,8 @@ namespace stereoControl
         private string rightImgpath_sgbm = null;
         private Mat leftImg_sgbm = new Mat();
         private Mat rightImg_sgbm = new Mat();
+        private Mat leftImg_sgbm_rectify = new Mat();
+        private Mat rightImg_sgbm_rectify = new Mat();
         private Mat sgbmDisImg = new Mat();
         private Mat sgbm_dis8UImg = new Mat();
         private Mat sgbm_dis24UImg = new Mat();
@@ -433,14 +437,17 @@ namespace stereoControl
                     //存储鼠标点三维坐标
                     Point3f xyzP = new Point3f();
                     Mat _3DImage = new Mat();
-                    Cv2.ReprojectImageTo3D(bmDisImg, _3DImage, ShareData.Q, true, -1);
+                    Mat bm_disp_true = new Mat();
+                    bmDisImg.ConvertTo(bm_disp_true, MatType.CV_32FC1,1.0/16);      //除16转真正视差图
+                    Cv2.ReprojectImageTo3D(bm_disp_true, _3DImage, ShareData.Q, true, -1);
                     var _3DImgIndexer = _3DImage.GetGenericIndexer<Vec3f>();
                     //_3DImage = _3DImage * 16;           //真实视差值
                     //转换空间点坐标
                     Vec3f temp = _3DImgIndexer[e.Y, e.X];
-                    xyzP.X = temp.Item0 * 16;             //转换真实视差值
-                    xyzP.Y = temp.Item1 * 16;
-                    xyzP.Z = temp.Item2 * 16;
+                    xyzP.X = temp.Item0;             //转换真实视差值
+                    xyzP.Y = temp.Item1;
+                    xyzP.Z = temp.Item2;
+                    float disdepth = xyzP.Z / 10;   //cm
                     if (xyzP.Z == 160000)
                     {
                         ShareData.Log = "像素坐标：(" + e.X.ToString() + " , " + e.Y.ToString() + ")深度测量失败~，请重新选择像素点";
@@ -453,8 +460,9 @@ namespace stereoControl
                     }
                     else
                     {
-                        ShareData.Log = "像素坐标：(" + e.X.ToString() + " , " + e.Y.ToString() + ")经过BM算法计算得到的空间坐标为" + xyzP.X.ToString()
-                                    + " , " + xyzP.Y.ToString() + " , " + xyzP.Z.ToString() + ")";
+                        ShareData.Log = "像素坐标：(" + e.X.ToString() + " , " + e.Y.ToString() + ")经过BM算法计算得到的空间坐标为:(" + xyzP.X.ToString()
+                                    + " , " + xyzP.Y.ToString() + " , " + xyzP.Z.ToString() + ")" + 
+                                    " 深度值为：" + disdepth.ToString() + "cm";
                         this.textBox_xpos.ForeColor = Color.Black;
                         this.textBox_ypos.ForeColor = Color.Black;
                         this.textBox_zpos.ForeColor = Color.Black;
@@ -469,12 +477,15 @@ namespace stereoControl
             {
                 Point3f xyzP_sgbm = new Point3f();
                 Mat sgbm_3DImg = new Mat();
-                Cv2.ReprojectImageTo3D(sgbmDisImg, sgbm_3DImg, ShareData.Q, true, -1);
+                Mat sgbmDisImg_temp = new Mat();
+                sgbmDisImg.ConvertTo(sgbmDisImg_temp, MatType.CV_32F, 1.0 / 16);
+                //sgbmDisImg.ConvertTo(sgbmDisImg_temp, MatType.CV_8U, 255 / (sgbm_numofDisparities * 16.0));
+                Cv2.ReprojectImageTo3D(sgbmDisImg_temp, sgbm_3DImg, ShareData.Q, true, -1);
                 var sgbm_3DImg_Indexer = sgbm_3DImg.GetGenericIndexer<Vec3f>();
                 Vec3f temp = sgbm_3DImg_Indexer[e.Y, e.X];
-                xyzP_sgbm.X = temp.Item0 * 16;          //单位mm , * 1.6单位则是cm
-                xyzP_sgbm.Y = temp.Item1 * 16;
-                xyzP_sgbm.Z = temp.Item2 * 16;
+                xyzP_sgbm.X = (float)(temp.Item0 );          //单位mm
+                xyzP_sgbm.Y = (float)(temp.Item1 );
+                xyzP_sgbm.Z = (float)(temp.Item2 );
                 if (xyzP_sgbm.Z == 160000)
                 {
                     ShareData.Log = "像素坐标：(" + e.X.ToString() + " , " + e.Y.ToString() + ")深度测量失败~，请重新选择像素点";
@@ -488,7 +499,8 @@ namespace stereoControl
                 else
                 {
                     ShareData.Log = "像素坐标：(" + e.X.ToString() + " , " + e.Y.ToString() + ")经过SGBM算法计算得到的空间坐标为" + xyzP_sgbm.X.ToString()
-                                + " , " + xyzP_sgbm.Y.ToString() + " , " + xyzP_sgbm.Z.ToString() + ")";
+                                + " , " + xyzP_sgbm.Y.ToString() + " , " + xyzP_sgbm.Z.ToString() + ")" + 
+                                " 深度距离为：" + (xyzP_sgbm.Z / 10).ToString() + "cm";
                     this.textBox_xpos.ForeColor = Color.Black;
                     this.textBox_ypos.ForeColor = Color.Black;
                     this.textBox_zpos.ForeColor = Color.Black;
@@ -496,7 +508,11 @@ namespace stereoControl
                     this.textBox_ypos.Text = xyzP_sgbm.Y.ToString();
                     this.textBox_zpos.Text = xyzP_sgbm.Z.ToString();
                 }
-            }            
+            }    
+            if(IS_CAL_PIC_BM)
+            {
+                //待实现
+            }
         }
         //选择加载SGBM计算图像
         private void ucBtnExt_sgbmLoadImg_BtnClick(object sender, EventArgs e)
@@ -510,17 +526,17 @@ namespace stereoControl
             {
                 //加载显示图像
                 leftImgpath_sgbm = sgbmImgChooseWin.LeftImgpath;
-                rightImgpath_sgbm = sgbmImgChooseWin.RightImgPath;
-                //输出目标路径
-                Console.WriteLine("left:" + leftImgpath_sgbm);
-                Console.WriteLine("right:" + rightImgpath_sgbm);
+                rightImgpath_sgbm = sgbmImgChooseWin.RightImgPath;                
                 //读入图像
                 leftImg_sgbm = Cv2.ImRead(leftImgpath_sgbm, ImreadModes.Color);
                 rightImg_sgbm = Cv2.ImRead(rightImgpath_sgbm, ImreadModes.Color);
-                //窗体显示图像
+                //图像校正
+                Cv2.Remap(leftImg_sgbm, leftImg_sgbm_rectify, ShareData.leftMap1, ShareData.leftMap2, InterpolationFlags.Linear);
+                Cv2.Remap(rightImg_sgbm, rightImg_sgbm_rectify, ShareData.rightMap1, ShareData.rightMap2, InterpolationFlags.Linear);
+                //窗体显示校正图像
                 SGBM_IMG_TYPE_TAG = 1;
-                this.pictureBoxIpl_Img.ImageIpl = leftImg_sgbm;
-                ShareData.Log = "[msg] 图像加载成功";
+                this.pictureBoxIpl_Img.ImageIpl = leftImg_sgbm_rectify;
+                
                 //释放窗体资源
                 sgbmImgChooseWin.Close();
             }
@@ -533,11 +549,12 @@ namespace stereoControl
         private void ucBtnExt_sgbmDisCal_BtnClick(object sender, EventArgs e)
         {
             if(IS_USE_SGBM_FLAG)
-            {
+            {                
                 Mat tleftImg_gray = new Mat();
-                Mat trightImg_gray = new Mat();
-                Cv2.CvtColor(leftImg_sgbm, tleftImg_gray, ColorConversionCodes.BGR2GRAY);
-                Cv2.CvtColor(rightImg_sgbm, trightImg_gray, ColorConversionCodes.BGR2GRAY);
+                Mat trightImg_gray = new Mat();               
+                //转换灰度图
+                Cv2.CvtColor(leftImg_sgbm_rectify, tleftImg_gray, ColorConversionCodes.BGR2GRAY);
+                Cv2.CvtColor(rightImg_sgbm_rectify, trightImg_gray, ColorConversionCodes.BGR2GRAY);
                 //计算视差图
                 double min, max;
                 //记录SGBM算法运行时间
@@ -613,7 +630,7 @@ namespace stereoControl
                     SGBM_IMG_TYPE_TAG = 2;
                     //圈出有效视差区
                     Cv2.Rectangle(leftImg_sgbm, sgbm_validDisROI, new Scalar(0, 0, 255), 1);
-                    this.pictureBoxIpl_Img.ImageIpl = this.leftImg_sgbm;
+                    this.pictureBoxIpl_Img.ImageIpl = this.leftImg_sgbm_rectify;
                 }
                 else if(SGBM_IMG_TYPE_TAG == 2)         //伪彩色视差图
                 {
@@ -736,7 +753,16 @@ namespace stereoControl
         {
             this.sgbm_speckleRange = (int)this.numericUpDown_speckcleRange.Value;
         }
-        
+        //BM算法计算静态图像视差图
+        private void ucBtnExt1_BtnClick(object sender, EventArgs e)
+        {
+            //临时使用
+        }
+        //SGBM算法计算出所有坐标点
+        private void ucBtnExt2_BtnClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -42,10 +42,10 @@
             this.ucCheckBox_log.Checked = false;
             this.ucCheckBox_log.Font = new System.Drawing.Font("宋体", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ucCheckBox_log.Location = new System.Drawing.Point(1, 387);
-            this.ucCheckBox_log.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ucCheckBox_log.Margin = new System.Windows.Forms.Padding(2);
             this.ucCheckBox_log.Name = "ucCheckBox_log";
             this.ucCheckBox_log.Padding = new System.Windows.Forms.Padding(1);
-            this.ucCheckBox_log.Size = new System.Drawing.Size(76, 24);
+            this.ucCheckBox_log.Size = new System.Drawing.Size(91, 24);
             this.ucCheckBox_log.TabIndex = 1;
             this.ucCheckBox_log.TextValue = "始终置顶";
             this.ucCheckBox_log.CheckedChangeEvent += new System.EventHandler(this.ucCheckBox_log_CheckedChangeEvent);
@@ -113,7 +113,7 @@
             this.richTextBox_log.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox_log.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.richTextBox_log.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox_log.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox_log.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox_log.Name = "richTextBox_log";
             this.richTextBox_log.ReadOnly = true;
             this.richTextBox_log.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
@@ -133,7 +133,7 @@
             this.Controls.Add(this.ucBtnExt_clear);
             this.Controls.Add(this.ucCheckBox_log);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LogView";

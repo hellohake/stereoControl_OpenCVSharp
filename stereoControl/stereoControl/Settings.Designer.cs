@@ -106,13 +106,13 @@
             this.ucPanelTitle1.IsExpand = false;
             this.ucPanelTitle1.IsRadius = true;
             this.ucPanelTitle1.IsShowRect = true;
-            this.ucPanelTitle1.Location = new System.Drawing.Point(10, 12);
-            this.ucPanelTitle1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucPanelTitle1.Location = new System.Drawing.Point(8, 10);
+            this.ucPanelTitle1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ucPanelTitle1.Name = "ucPanelTitle1";
             this.ucPanelTitle1.Padding = new System.Windows.Forms.Padding(1);
             this.ucPanelTitle1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucPanelTitle1.RectWidth = 2;
-            this.ucPanelTitle1.Size = new System.Drawing.Size(558, 484);
+            this.ucPanelTitle1.Size = new System.Drawing.Size(418, 408);
             this.ucPanelTitle1.TabIndex = 0;
             this.ucPanelTitle1.Title = "相机参数设置";
             // 
@@ -537,12 +537,13 @@
             // 
             // Settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 502);
+            this.ClientSize = new System.Drawing.Size(433, 431);
             this.Controls.Add(this.ucPanelTitle1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Settings";
             this.Text = "Settings";
             this.ucPanelTitle1.ResumeLayout(false);

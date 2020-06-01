@@ -59,6 +59,9 @@ namespace stereoControl
         public static Mat leftMap2 = new Mat();
         public static Mat rightMap1 = new Mat();
         public static Mat rightMap2 = new Mat();
+        //轮廓坐标点数据
+        public static OpenCvSharp.Point[] Apple_contour;
+        public static OpenCvSharp.Point[] Pear_contour;
 
         //封装属性
         public static Mat ComImg
